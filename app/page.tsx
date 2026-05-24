@@ -1,16 +1,116 @@
 import {
-  AtSign,
   BadgeCheck,
-  Camera,
-  Disc3,
-  FolderGit2,
-  Music2,
-  Play,
   ShieldCheck,
 } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+
+type BrandIconProps = {
+  className?: string;
+};
+
+function GitHubLogo({ className }: BrandIconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      aria-hidden="true"
+      fill="currentColor"
+    >
+      <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.41-4.04-1.41-.55-1.37-1.33-1.73-1.33-1.73-1.09-.74.08-.72.08-.72 1.2.08 1.84 1.23 1.84 1.23 1.08 1.83 2.82 1.3 3.5.99.1-.77.42-1.3.76-1.6-2.67-.3-5.48-1.32-5.48-5.9 0-1.3.47-2.36 1.23-3.2-.12-.3-.53-1.54.12-3.2 0 0 1.01-.32 3.3 1.22a11.5 11.5 0 0 1 6 0c2.28-1.54 3.29-1.22 3.29-1.22.65 1.66.24 2.9.12 3.2.77.84 1.23 1.9 1.23 3.2 0 4.6-2.81 5.6-5.5 5.9.43.37.82 1.1.82 2.23v3.3c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+    </svg>
+  );
+}
+
+function XLogo({ className }: BrandIconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      aria-hidden="true"
+      fill="currentColor"
+    >
+      <path d="M18.9 2H22l-6.76 7.72L23.2 22h-6.24l-4.9-7.5L5.5 22H2.4l7.23-8.26L1.8 2H8.2l4.43 6.96L18.9 2Zm-1.1 18h1.73L7.25 3.9H5.4L17.8 20Z" />
+    </svg>
+  );
+}
+
+function InstagramLogo({ className }: BrandIconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+    >
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function SpotifyLogo({ className }: BrandIconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      aria-hidden="true"
+      fill="currentColor"
+    >
+      <path d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.82 15.12a.9.9 0 0 1-1.24.3 9.96 9.96 0 0 0-8.36-.92.9.9 0 1 1-.57-1.7 11.75 11.75 0 0 1 9.88 1.08.9.9 0 0 1 .29 1.24Zm1.78-3.09a1.12 1.12 0 0 1-1.53.37 12.13 12.13 0 0 0-10.17-1.1 1.12 1.12 0 0 1-.69-2.13 14.38 14.38 0 0 1 12.07 1.31 1.12 1.12 0 0 1 .32 1.55Zm.15-3.2a1.35 1.35 0 0 1-1.84.44 14.93 14.93 0 0 0-12.47-1.36A1.35 1.35 0 0 1 3.65 6.8a17.62 17.62 0 0 1 14.72 1.6 1.35 1.35 0 0 1 .38 1.87Z" />
+    </svg>
+  );
+}
+
+function AppleMusicLogo({ className }: BrandIconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      aria-hidden="true"
+      fill="currentColor"
+    >
+      <path d="M17.5 3.2v11.1a3.3 3.3 0 1 1-1.5-2.77V7.03l-6 1.2v8.07a3.3 3.3 0 1 1-1.5-2.77V5.7l9-1.8Z" />
+    </svg>
+  );
+}
+
+function YouTubeLogo({ className }: BrandIconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      aria-hidden="true"
+      fill="currentColor"
+    >
+      <path d="M23 12s0-3.02-.39-4.48a2.8 2.8 0 0 0-1.97-1.97C19.18 5.16 12 5.16 12 5.16s-7.18 0-8.64.39A2.8 2.8 0 0 0 1.39 7.52C1 8.98 1 12 1 12s0 3.02.39 4.48a2.8 2.8 0 0 0 1.97 1.97c1.46.39 8.64.39 8.64.39s7.18 0 8.64-.39a2.8 2.8 0 0 0 1.97-1.97C23 15.02 23 12 23 12ZM9.7 15.75v-7.5L16 12l-6.3 3.75Z" />
+    </svg>
+  );
+}
+
+function TuneCoreLogo({ className }: BrandIconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8 8.5h8" />
+      <path d="M12 8.5v7.5" />
+      <path d="M9.5 16.5h5" />
+    </svg>
+  );
+}
 
 const strengths = [
   {
@@ -19,7 +119,7 @@ const strengths = [
   },
   {
     title: "Product",
-    body: "設計　実装　リリース",
+    body: "設計 実装 リリース",
   },
   {
     title: "Sound",
@@ -68,22 +168,22 @@ const musicLinks = [
   {
     title: "Spotify",
     url: "https://open.spotify.com/artist/4ZIHxbWmvE32SNAF6XMjOc",
-    icon: Music2,
+    icon: SpotifyLogo,
   },
   {
     title: "Apple Music",
     url: "https://music.apple.com/jp/album/%E3%81%A0%E3%82%8A%E3%81%83/1890611237?i=1890611241",
-    icon: Disc3,
+    icon: AppleMusicLogo,
   },
   {
     title: "YouTube",
     url: "https://www.youtube.com/watch?v=T2-BBHQJNTs&list=OLAK5uy_l0bqCM8wOGUQNP81KtM8n8QrPvDhN4Roo",
-    icon: Play,
+    icon: YouTubeLogo,
   },
   {
     title: "Instagram",
     url: "https://www.instagram.com/_masatoshi_for_eba_/",
-    icon: Camera,
+    icon: InstagramLogo,
   },
 ];
 
@@ -91,38 +191,22 @@ const links = [
   {
     label: "GitHub",
     href: "https://github.com/Masa-eba",
-    icon: FolderGit2,
-    cardClassName:
-      "border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] hover:border-stone-200/30 hover:bg-white/10",
-    iconWrapClassName:
-      "border-white/10 bg-stone-200/8 text-stone-100 shadow-[0_0_30px_rgba(255,255,255,0.08)]",
+    icon: GitHubLogo,
   },
   {
     label: "X",
     href: "https://x.com/_Masatoshi_eba_",
-    icon: AtSign,
-    cardClassName:
-      "border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] hover:border-slate-200/25 hover:bg-slate-100/6",
-    iconWrapClassName:
-      "border-white/10 bg-black/40 text-white shadow-[0_0_30px_rgba(255,255,255,0.04)]",
+    icon: XLogo,
   },
   {
     label: "TuneCore",
     href: "https://www.tunecore.co.jp/artists?id=1107044",
-    icon: Disc3,
-    cardClassName:
-      "border-amber-200/12 bg-[linear-gradient(180deg,rgba(251,191,36,0.09),rgba(255,255,255,0.03))] hover:border-amber-200/30 hover:bg-amber-200/10",
-    iconWrapClassName:
-      "border-amber-200/18 bg-amber-200/10 text-amber-100 shadow-[0_0_34px_rgba(251,191,36,0.16)]",
+    icon: TuneCoreLogo,
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/_masatoshi_for_eba_/",
-    icon: Camera,
-    cardClassName:
-      "border-fuchsia-300/12 bg-[linear-gradient(180deg,rgba(244,114,182,0.10),rgba(139,92,246,0.05))] hover:border-fuchsia-300/28 hover:bg-fuchsia-200/10",
-    iconWrapClassName:
-      "border-fuchsia-300/16 bg-fuchsia-300/10 text-fuchsia-100 shadow-[0_0_34px_rgba(217,70,239,0.18)]",
+    icon: InstagramLogo,
   },
 ];
 
@@ -207,14 +291,11 @@ export default function Home() {
             </div>
 
             <h1 className="mt-8 max-w-4xl text-5xl leading-[1.02] font-semibold tracking-tight text-stone-50 sm:text-7xl">
-              This is
-              <span className="block bg-gradient-to-r from-stone-50 via-amber-200 to-stone-400 bg-clip-text text-transparent">
-                my LIFE.
-              </span>
+              阿部 勝寿
             </h1>
 
             <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-300 sm:text-xl">
-              阿部勝寿 同志社大学大学院 理工学研究科 情報工学専攻
+              同志社大学大学院 理工学研究科 情報工学専攻
               Singer Song Writer & BeatMaker
             </p>
 
@@ -265,18 +346,10 @@ export default function Home() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className={`rounded-[1.9rem] p-5 text-stone-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-md transition hover:-translate-y-0.5 hover:text-stone-50 ${link.cardClassName}`}
+                  className="flex items-center justify-between rounded-[1.75rem] border border-white/10 bg-white/5 px-6 py-6 text-base font-medium text-stone-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-amber-200/25 hover:bg-white/8 hover:text-stone-50"
                 >
-                  <div className="flex h-full min-h-32 flex-col justify-between gap-7">
-                    <div
-                      className={`flex size-20 items-center justify-center rounded-3xl ${link.iconWrapClassName}`}
-                    >
-                      <link.icon className="size-10" />
-                    </div>
-                    <span className="text-xs font-medium tracking-[0.22em] uppercase">
-                      {link.label}
-                    </span>
-                  </div>
+                  <span>{link.label}</span>
+                  <link.icon className="size-4" />
                 </a>
               ))}
             </div>
@@ -287,8 +360,8 @@ export default function Home() {
       <section className="mx-auto w-full max-w-6xl px-6 py-20">
         <SectionHeading
           label="About"
-          title="作る　届ける　そして楽しむ"
-          description="研究、開発、音楽"
+          title="研究 開発 音楽"
+          description=""
         />
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -317,7 +390,7 @@ export default function Home() {
         <SectionHeading
           label="Certifications"
           title="資格"
-          description="基礎知識だけでなく、継続して技術を整理し直すための指標として資格取得にも取り組んでいます。"
+          description=""
         />
 
         <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -398,7 +471,7 @@ export default function Home() {
           <Card className="border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                Takumi Pitch Deck
+                Takumi
               </p>
               <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-50">
                 匠 -takumi- プレゼン資料
@@ -419,7 +492,7 @@ export default function Home() {
           <Card className="border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                Word Galaxy Deck
+                Word Galaxy
               </p>
               <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-50">
                 ことばのほしぞら プレゼン資料
@@ -443,7 +516,7 @@ export default function Home() {
         <SectionHeading
           label="Research"
           title="研究テーマ"
-          description="シミュレーションを使って、充電需要と交通流の両方を踏まえた配置最適化を検討しています。"
+          description="交通シミュレーションを用いて、充電需要と交通流の両方を踏まえた配置最適化を検討しています。"
         />
 
         <div className="mt-10 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
@@ -455,10 +528,7 @@ export default function Home() {
               <h3 className="mt-4 text-3xl font-semibold tracking-tight">
                 EV充電ステーション配置最適化
               </h3>
-              <p className="mt-6 leading-8 text-stone-300">
-                UXsimを用いた交通流シミュレーションをもとに、利用需要・待ち時間・配置コストのバランスを考慮した最適化を扱っています。
-                実装と分析を往復しながら、現実の制約に耐える設計を目指しています。
-              </p>
+
             </CardContent>
           </Card>
 
@@ -515,7 +585,8 @@ export default function Home() {
               </h3>
               <p className="mt-2 text-stone-400">O-7z & 勝寿</p>
               <p className="mt-5 leading-8 text-stone-300">
-                O-7zがlyric、勝寿がbeatを担当
+                O-7z : lyric
+                勝寿 : beat
                 原点を回帰した伝説の一曲
               </p>
 
