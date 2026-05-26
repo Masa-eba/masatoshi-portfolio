@@ -164,7 +164,7 @@ const youtubeEmbedUrl =
   "https://www.youtube.com/embed/T2-BBHQJNTs?list=RDT2-BBHQJNTs&start_radio=1";
 
 const takumiSlidesEmbedUrl =
-  "https://www.canva.com/design/DAGzTkaDnx4/4lzrxPDCpTMXWWQilUAo_Q/view?embed";
+  "https://www.canva.com/design/DAGzTkaDnx4/-4KTiJNVV-PZ5cghKssGbw/view?embed";
 
 const wordGalaxySlidesEmbedUrl =
   "https://docs.google.com/presentation/d/16Fi5WfwiokDrPDSavv5lUgfpazfzo0fI/embed?start=false&loop=false&delayms=3000";
