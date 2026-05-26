@@ -133,7 +133,7 @@ const projects = [
     category: "AI / 3D Experience",
     highlights: ["Winner", "3D", "AI Agent"],
     description:
-      "Engineer Guild Hackathon 2026 presented by Mercariで優勝したWebアプリケーション。ユーザーのAIクローンが本人に代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出す体験を設計しました。",
+      "Engineer Guild Hackathon 2026 presented by Mercari 優勝\n「放置Me」は、ユーザーのAIクローンがユーザーに代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出すWebアプリケーションです。",
     url: "https://github.com/engineer-guild-hackathon-2026-05/team-05",
   },
   {
@@ -141,7 +141,7 @@ const projects = [
     category: "Hackathon / Social Learning",
     highlights: ["Hackathon", "Team Development"],
     description:
-      "Engineer Guild Hackathonで企業賞を受賞したソーシャルラーニングアプリ。スキルツリー、師弟関係スレッド、投稿機能を通じて、学びの道のりを可視化しながら継続を支える体験を設計しました。",
+      "Engineer Guild Hackathon 2025 企業賞受賞\n「匠 (Takumi)」は、学びの道のりを可視化し、仲間や「ちょっと先の先輩」との繋がりを通じて成長できる、新しいソーシャルラーニング・プラットフォームです。",
     url: "https://github.com/Engineer-Guild-Hackathon/team-4-app",
   },
   {
@@ -149,7 +149,7 @@ const projects = [
     category: "NLP / Visualization",
     highlights: ["Award", "BERT", "2D / 3D"],
     description:
-      "技育CAMP ハッカソン Vol.6で努力賞を受賞した学習支援Webアプリ。BERTで算出した単語同士の関連性を2D/3Dで可視化し、単語帳とテスト機能まで含めて学習体験を設計しました。",
+      "技育CAMP ハッカソン Vol.6 努力賞受賞\n「ことばのほしぞら」は、単語間の関連性を可視化することで、より効果的な学習体験を提供するWebアプリケーションです。",
     url: "https://github.com/Masa-eba/Word_Galaxy",
   },
 ];
@@ -469,7 +469,7 @@ export default function Home() {
                   <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-50">
                     {project.title}
                   </h3>
-                  <p className="mt-5 leading-8 text-stone-300">
+                  <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
                     {project.description}
                   </p>
                 </CardContent>
