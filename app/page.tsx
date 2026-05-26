@@ -129,6 +129,14 @@ const strengths = [
 
 const projects = [
   {
+    title: "放置Me",
+    category: "AI / 3D Experience",
+    highlights: ["Winner", "3D", "AI Agent"],
+    description:
+      "Engineer Guild Hackathon 2026 presented by Mercariで優勝したWebアプリケーション。ユーザーのAIクローンが本人に代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出す体験を設計しました。",
+    url: "https://github.com/engineer-guild-hackathon-2026-05/team-05",
+  },
+  {
     title: "匠 -takumi-",
     category: "Hackathon / Social Learning",
     highlights: ["Hackathon", "Team Development"],
@@ -160,6 +168,9 @@ const takumiSlidesEmbedUrl =
 
 const wordGalaxySlidesEmbedUrl =
   "https://docs.google.com/presentation/d/16Fi5WfwiokDrPDSavv5lUgfpazfzo0fI/embed?start=false&loop=false&delayms=3000";
+
+const hochiMeSlidesEmbedUrl =
+  "https://www.canva.com/design/DAHKsWlJrzM/346qIoZLeeaV8ABgQlzPHQ/view?embed";
 
 const profileImageSrc = "/images/profile/masatoshi-portrait.jpg";
 const jacketImageSrc = "/images/music/darii-cover.png";
@@ -467,7 +478,28 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+        <div className="mt-8 grid gap-5 lg:grid-cols-3">
+          <Card className="border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg">
+            <CardContent className="p-8">
+              <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
+                HochiMe
+              </p>
+              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-50">
+                放置Me プレゼン資料
+              </h3>
+
+              <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-white/10 bg-black shadow-[0_22px_80px_-34px_rgba(0,0,0,1)]">
+                <iframe
+                  src={hochiMeSlidesEmbedUrl}
+                  className="aspect-[16/9] w-full"
+                  title="放置Me プレゼン資料"
+                  loading="lazy"
+                  allowFullScreen
+                />
+              </div>
+            </CardContent>
+          </Card>
+
           <Card className="border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
