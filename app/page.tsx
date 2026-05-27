@@ -115,11 +115,11 @@ function TuneCoreLogo({ className }: BrandIconProps) {
 const strengths = [
   {
     title: "Research",
-    body: "EV充電ステーション配置最適化",
+    body: "UXsimを用いたEV充電ステーション配置最適化",
   },
   {
     title: "Product",
-    body: "設計 実装 リリース",
+    body: "要件整理から設計、実装、リリースまで担当",
   },
   {
     title: "Sound",
@@ -133,7 +133,7 @@ const projects = [
     category: "AI / 3D Experience",
     highlights: ["Winner", "3D", "AI Agent"],
     description:
-      "Engineer Guild Hackathon 2026 presented by Mercari 優勝\n「放置Me」は、ユーザーのAIクローンがユーザーに代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出すWebアプリケーションです。",
+      "Engineer Guild Hackathon 2026 presented by Mercari 優勝・賞金100万円獲得\n「放置Me」は、ユーザーのAIクローンが本人に代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出すWebアプリケーションです。私は主にSupabase、Gemini APIを用いたバックエンドとLLM連携を担当しました。",
     url: "https://github.com/engineer-guild-hackathon-2026-05/team-05",
   },
   {
@@ -141,7 +141,7 @@ const projects = [
     category: "Hackathon / Social Learning",
     highlights: ["Hackathon", "Team Development"],
     description:
-      "Engineer Guild Hackathon 2025 企業賞受賞\n「匠 (Takumi)」は、学びの道のりを可視化し、仲間や「ちょっと先の先輩」との繋がりを通じて成長できる、新しいソーシャルラーニング・プラットフォームです。",
+      "Engineer Guild Hackathon 2025 by AtCoder エムスリー賞受賞\n「匠 (Takumi)」は、学びの道のりを可視化し、仲間や「ちょっと先の先輩」との繋がりを通じて成長できる、ソーシャルラーニング・プラットフォームです。私は師弟関係をツリー構造で可視化する中核機能の設計・実装を担当しました。",
     url: "https://github.com/Engineer-Guild-Hackathon/team-4-app",
   },
   {
@@ -149,15 +149,9 @@ const projects = [
     category: "NLP / Visualization",
     highlights: ["Award", "BERT", "2D / 3D"],
     description:
-      "技育CAMP ハッカソン Vol.6 努力賞受賞\n「ことばのほしぞら」は、単語間の関連性を可視化することで、より効果的な学習体験を提供するWebアプリケーションです。",
+      "技育CAMP ハッカソン Vol.6 努力賞受賞\n「ことばのほしぞら」は、単語間の関連性を可視化することで、より効果的な学習体験を提供するWebアプリケーションです。BERTで意味的類似性を算出し、2D/3D表示、検索、単語帳、テストまでを含む学習導線を構築しました。",
     url: "https://github.com/Masa-eba/Word_Galaxy",
   },
-];
-
-const techGroups = [
-  ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-  ["Python", "FastAPI", "Django", "Ruby on Rails"],
-  ["PostgreSQL", "Docker", "AWS", "GitHub"],
 ];
 
 const youtubeEmbedUrl =
@@ -251,24 +245,41 @@ function SectionHeading({
       <h2 className="mt-3 text-3xl font-semibold tracking-tight text-stone-50 sm:text-4xl">
         {title}
       </h2>
-      <p className="mt-4 text-base leading-8 text-stone-300">{description}</p>
+      {description ? (
+        <p className="mt-4 text-base leading-8 text-stone-300">
+          {description}
+        </p>
+      ) : null}
     </div>
   );
+}
+
+function badgeClassName(tone: "default" | "accent" = "default") {
+  const base =
+    "border px-3 py-1 text-[0.7rem] font-medium tracking-[0.16em] uppercase backdrop-blur-md";
+
+  if (tone === "accent") {
+    return `${base} border-amber-300/35 bg-amber-200/14 text-amber-50 shadow-[0_0_24px_rgba(251,191,36,0.14)]`;
+  }
+
+  return `${base} border-white/10 bg-white/6 text-stone-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]`;
+}
+
+function isAccentBadge(label: string) {
+  return ["Award", "Winner", "Certified"].includes(label);
 }
 
 export default function Home() {
   return (
     <main className="relative overflow-hidden text-stone-100">
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px] opacity-20" />
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[34rem] w-[52rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,210,122,0.16),transparent_62%)] blur-3xl" />
-      <div className="pointer-events-none absolute right-[-12rem] top-24 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(132,92,255,0.16),transparent_66%)] blur-3xl" />
 
       <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 pb-16 pt-6 sm:pt-8">
         <header className="sticky top-0 z-20 -mx-6 flex items-center justify-between border-b border-white/10 bg-black/35 px-6 pb-6 pt-2 backdrop-blur-xl sm:pt-4">
           <p className="text-sm tracking-[0.28em] text-stone-400 uppercase">
             Masatoshi Abe
           </p>
-          <nav className="hidden gap-6 text-sm text-stone-400 md:flex">
+          <nav className="hidden gap-4 text-sm text-stone-400 lg:flex">
             <a href="#certifications" className="transition hover:text-stone-50">
               Certifications
             </a>
@@ -281,27 +292,24 @@ export default function Home() {
             <a href="#music" className="transition hover:text-stone-50">
               Music
             </a>
-            <a href="#contact" className="transition hover:text-stone-50">
-              Contact
-            </a>
           </nav>
         </header>
 
-        <div className="grid flex-1 items-center gap-12 py-16 lg:grid-cols-[1.25fr_0.75fr] lg:py-24">
+        <div className="grid flex-1 items-center gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:py-20 xl:grid-cols-[minmax(0,1fr)_440px]">
           <div>
             <div className="flex flex-wrap gap-2">
-              <Badge className="border-white/12 bg-white/6 text-stone-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
+              <Badge className={badgeClassName()}>
                 Software Engineer
               </Badge>
-              <Badge className="border-white/12 bg-white/6 text-stone-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
+              <Badge className={badgeClassName()}>
                 Researcher
               </Badge>
-              <Badge className="border-white/12 bg-white/6 text-stone-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
+              <Badge className={badgeClassName()}>
                 Beatmaker
               </Badge>
             </div>
 
-            <h1 className="mt-8 max-w-4xl text-5xl leading-[1.02] font-semibold tracking-tight text-stone-50 sm:text-7xl">
+            <h1 className="mt-8 max-w-4xl text-5xl leading-[1.04] font-semibold tracking-tight text-stone-50 sm:text-7xl">
               阿部 勝寿
             </h1>
 
@@ -313,7 +321,7 @@ export default function Home() {
             <div className="mt-10 flex flex-wrap gap-3">
               <a
                 href="#projects"
-                className="rounded-full bg-stone-50 px-6 py-3 text-sm font-medium text-stone-950 transition hover:bg-amber-100"
+                className="rounded-2xl bg-stone-50 px-6 py-3 text-sm font-medium text-stone-950 transition hover:bg-amber-100"
               >
                 View Projects
               </a>
@@ -321,7 +329,7 @@ export default function Home() {
                 href="https://github.com/Masa-eba"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-white/12 bg-white/6 px-6 py-3 text-sm font-medium text-stone-100 backdrop-blur-md transition hover:border-amber-200/30 hover:bg-white/10"
+                className="rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-stone-100 backdrop-blur-md transition hover:border-amber-200/30 hover:bg-white/10"
               >
                 GitHub
               </a>
@@ -329,7 +337,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-4">
-            <Card className="overflow-hidden border border-white/10 bg-white/6 shadow-[0_30px_120px_-48px_rgba(0,0,0,0.8)] backdrop-blur-xl">
+            <Card className="overflow-hidden border border-white/10 bg-white/5 shadow-[0_24px_80px_-48px_rgba(0,0,0,0.9)] backdrop-blur-lg">
               <div className="relative aspect-[4/5]">
                 <Image
                   src={profileImageSrc}
@@ -357,7 +365,7 @@ export default function Home() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-between rounded-[1.75rem] border border-white/10 bg-white/5 px-6 py-6 text-base font-medium text-stone-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-amber-200/25 hover:bg-white/8 hover:text-stone-50"
+                  className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-6 py-6 text-base font-medium text-stone-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-amber-200/25 hover:bg-white/8 hover:text-stone-50"
                 >
                   <span>{link.label}</span>
                   <link.icon className="size-4" />
@@ -379,7 +387,7 @@ export default function Home() {
           {strengths.map((strength) => (
             <Card
               key={strength.title}
-              className="border border-white/8 bg-white/5 shadow-[0_18px_60px_-36px_rgba(0,0,0,0.9)] backdrop-blur-md"
+              className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg"
             >
               <CardContent className="p-7">
                 <p className="text-sm font-medium text-stone-400">
@@ -395,7 +403,7 @@ export default function Home() {
       </section>
 
       <section
-        className="mx-auto w-full max-w-6xl px-6 py-20"
+        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
         id="certifications"
       >
         <SectionHeading
@@ -408,14 +416,14 @@ export default function Home() {
           {certifications.map((certification) => (
             <Card
               key={certification.title}
-              className="border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg"
+              className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg"
             >
               <CardContent className="p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex size-14 items-center justify-center rounded-2xl border border-white/10 bg-white/8 text-amber-100 shadow-[0_0_24px_rgba(251,191,36,0.08)]">
                     <certification.icon className="size-7" />
                   </div>
-                  <Badge className="border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-[0.7rem] tracking-[0.18em] text-emerald-100 uppercase">
+                  <Badge className={badgeClassName("accent")}>
                     Certified
                   </Badge>
                 </div>
@@ -431,7 +439,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-6 py-20" id="projects">
+      <section
+        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
+        id="projects"
+      >
         <SectionHeading
           label="Projects"
           title="開発物"
@@ -447,7 +458,7 @@ export default function Home() {
               rel="noreferrer"
               className="block"
             >
-              <Card className="h-full border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg transition hover:-translate-y-1 hover:border-amber-200/20 hover:bg-white/8">
+              <Card className="h-full border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg transition hover:-translate-y-1 hover:border-amber-200/20 hover:bg-white/8">
                 <CardContent className="p-8">
                   <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
                     {project.category}
@@ -456,11 +467,9 @@ export default function Home() {
                     {project.highlights.map((highlight) => (
                       <Badge
                         key={highlight}
-                        className={
-                          highlight === "Award"
-                            ? "border-amber-300/40 bg-amber-200/18 px-3 py-1 text-[0.7rem] tracking-[0.18em] text-amber-50 uppercase shadow-[0_0_24px_rgba(251,191,36,0.16)]"
-                            : "border-amber-200/18 bg-amber-200/8 px-3 py-1 text-[0.7rem] tracking-[0.18em] text-amber-100 uppercase"
-                        }
+                        className={badgeClassName(
+                          isAccentBadge(highlight) ? "accent" : "default"
+                        )}
                       >
                         {highlight}
                       </Badge>
@@ -478,8 +487,8 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          <Card className="border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg">
+        <div className="mt-8 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+          <Card className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
                 HochiMe
@@ -488,7 +497,7 @@ export default function Home() {
                 放置Me プレゼン資料
               </h3>
 
-              <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-white/10 bg-black shadow-[0_22px_80px_-34px_rgba(0,0,0,1)]">
+              <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
                 <iframe
                   src={hochiMeSlidesEmbedUrl}
                   className="aspect-[16/9] w-full"
@@ -500,7 +509,7 @@ export default function Home() {
             </CardContent>
           </Card>
 
-          <Card className="border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg">
+          <Card className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
                 Takumi
@@ -509,7 +518,7 @@ export default function Home() {
                 匠 -takumi- プレゼン資料
               </h3>
 
-              <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-white/10 bg-black shadow-[0_22px_80px_-34px_rgba(0,0,0,1)]">
+              <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
                 <iframe
                   src={takumiSlidesEmbedUrl}
                   className="aspect-[16/9] w-full"
@@ -521,7 +530,7 @@ export default function Home() {
             </CardContent>
           </Card>
 
-          <Card className="border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg">
+          <Card className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
                 Word Galaxy
@@ -530,7 +539,7 @@ export default function Home() {
                 ことばのほしぞら プレゼン資料
               </h3>
 
-              <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-white/10 bg-black shadow-[0_22px_80px_-34px_rgba(0,0,0,1)]">
+              <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
                 <iframe
                   src={wordGalaxySlidesEmbedUrl}
                   className="aspect-[16/9] w-full"
@@ -544,15 +553,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-6 py-20" id="research">
+      <section
+        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
+        id="research"
+      >
         <SectionHeading
           label="Research"
           title="研究テーマ"
           description="交通シミュレーションを用いて、充電需要と交通流の両方を踏まえた配置最適化を検討しています。"
         />
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-          <Card className="border border-amber-200/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] text-stone-100 shadow-[0_24px_90px_-36px_rgba(0,0,0,0.95)] backdrop-blur-xl">
+        <div className="mt-10">
+          <Card className="border border-white/10 bg-white/5 text-stone-100 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-amber-200/70 uppercase">
                 Current Thesis
@@ -560,36 +572,18 @@ export default function Home() {
               <h3 className="mt-4 text-3xl font-semibold tracking-tight">
                 EV充電ステーション配置最適化
               </h3>
-
-            </CardContent>
-          </Card>
-
-          <Card className="border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg">
-            <CardContent className="p-8">
-              <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                Stack
+              <p className="mt-6 leading-8 text-stone-300">
+                UXsimを用いた交通流シミュレーションをもとに、充電需要と交通流の両方を考慮した配置最適化を研究しています。
               </p>
-              <div className="mt-5 grid gap-3">
-                {techGroups.map((group) => (
-                  <div key={group.join("-")} className="flex flex-wrap gap-2">
-                    {group.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="outline"
-                        className="border-white/10 bg-white/6 px-3 py-1 text-stone-200"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                ))}
-              </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-6 py-20" id="music">
+      <section
+        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
+        id="music"
+      >
         <SectionHeading
           label="Music"
           title="音楽活動"
@@ -597,9 +591,9 @@ export default function Home() {
         />
 
         <div className="mt-10 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-          <Card className="border border-white/10 bg-white/6 shadow-[0_22px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-lg">
+          <Card className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
-              <div className="relative mb-6 aspect-square overflow-hidden rounded-[1.5rem] border border-white/10 bg-black">
+              <div className="relative mb-6 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-black">
                 <Image
                   src={jacketImageSrc}
                   alt="だりぃ cover art"
@@ -616,13 +610,13 @@ export default function Home() {
                 だりぃ
               </h3>
               <p className="mt-2 text-stone-400">O-7z & 勝寿</p>
-              <p className="mt-5 leading-8 text-stone-300">
+              <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
                 O-7z : lyric
                 勝寿 : beat
                 原点を回帰した伝説の一曲
               </p>
 
-              <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-white/10 bg-black shadow-[0_22px_80px_-34px_rgba(0,0,0,1)]">
+              <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
                 <iframe
                   className="aspect-video w-full"
                   src={youtubeEmbedUrl}
@@ -642,7 +636,7 @@ export default function Home() {
                 href={link.url}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-between rounded-[1.75rem] border border-white/10 bg-white/5 px-6 py-6 text-base font-medium text-stone-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-amber-200/25 hover:bg-white/8 hover:text-stone-50"
+                className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-6 py-6 text-base font-medium text-stone-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-amber-200/25 hover:bg-white/8 hover:text-stone-50"
               >
                 <span>{link.title}</span>
                 <link.icon className="size-4" />
