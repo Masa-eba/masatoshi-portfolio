@@ -129,6 +129,14 @@ const strengths = [
 
 const projects = [
   {
+    title: "ISDLシミュレータ",
+    category: "Novel Game / Lab Experience",
+    highlights: ["Winner", "React", "FastAPI"],
+    description:
+      "同志社大学 知的システムデザイン研究室 ISDLハッカソン優勝\n「ISDLシミュレータ」は、ISDLでの1年間をノベルゲーム形式で体験し、役割選択や研究活動を通して学生生活の成長と人間関係の変化を楽しめるWebアプリケーションです。React + Vite、FastAPI、SQLiteで構成しました。",
+    url: "https://github.com/Masa-eba/isdl-hackathon-2025",
+  },
+  {
     title: "放置Me",
     category: "AI / 3D Experience",
     highlights: ["Winner", "3D", "AI Agent"],
@@ -165,6 +173,9 @@ const wordGalaxySlidesEmbedUrl =
 
 const hochiMeSlidesEmbedUrl =
   "https://www.canva.com/design/DAHKsWlJrzM/346qIoZLeeaV8ABgQlzPHQ/view?embed";
+
+const isdlSlidesEmbedUrl =
+  "https://docs.google.com/presentation/d/e/2PACX-1vTAJ_aHn2aRKqLqqX2MyyoCRXrtjMAS-6MJJ1BovpeqSS5VQAo0WxAkSAQEU7GjBA/pubembed?start=false&loop=false&delayms=3000";
 
 const profileImageSrc = "/images/profile/masatoshi-portrait.jpg";
 const jacketImageSrc = "/images/music/darii-cover.png";
@@ -242,7 +253,7 @@ function SectionHeading({
       <p className="text-xs font-medium tracking-[0.3em] text-stone-400 uppercase">
         {label}
       </p>
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-stone-50 sm:text-4xl">
+      <h2 className="mt-3 text-3xl font-semibold text-stone-50 sm:text-4xl">
         {title}
       </h2>
       {description ? (
@@ -267,6 +278,37 @@ function badgeClassName(tone: "default" | "accent" = "default") {
 
 function isAccentBadge(label: string) {
   return ["Award", "Winner", "Certified"].includes(label);
+}
+
+function SlideCard({
+  eyebrow,
+  title,
+  src,
+}: {
+  eyebrow: string;
+  title: string;
+  src: string;
+}) {
+  return (
+    <Card className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
+      <CardContent className="p-8">
+        <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
+          {eyebrow}
+        </p>
+        <h3 className="mt-4 text-2xl font-semibold text-stone-50">{title}</h3>
+
+        <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
+          <iframe
+            src={src}
+            className="aspect-[16/9] w-full"
+            title={title}
+            loading="lazy"
+            allowFullScreen
+          />
+        </div>
+      </CardContent>
+    </Card>
+  );
 }
 
 export default function Home() {
@@ -309,7 +351,7 @@ export default function Home() {
               </Badge>
             </div>
 
-            <h1 className="mt-8 max-w-4xl text-5xl leading-[1.04] font-semibold tracking-tight text-stone-50 sm:text-7xl">
+            <h1 className="mt-8 max-w-4xl text-5xl leading-[1.04] font-semibold text-stone-50 sm:text-7xl">
               阿部 勝寿
             </h1>
 
@@ -427,7 +469,7 @@ export default function Home() {
                     Certified
                   </Badge>
                 </div>
-                <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-50">
+                <h3 className="mt-4 text-2xl font-semibold text-stone-50">
                   {certification.title}
                 </h3>
                 <p className="mt-3 text-sm tracking-[0.2em] text-stone-400 uppercase">
@@ -475,7 +517,7 @@ export default function Home() {
                       </Badge>
                     ))}
                   </div>
-                  <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-50">
+                  <h3 className="mt-4 text-2xl font-semibold text-stone-50">
                     {project.title}
                   </h3>
                   <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
@@ -487,69 +529,27 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
-          <Card className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
-            <CardContent className="p-8">
-              <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                HochiMe
-              </p>
-              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-50">
-                放置Me プレゼン資料
-              </h3>
-
-              <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
-                <iframe
-                  src={hochiMeSlidesEmbedUrl}
-                  className="aspect-[16/9] w-full"
-                  title="放置Me プレゼン資料"
-                  loading="lazy"
-                  allowFullScreen
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
-            <CardContent className="p-8">
-              <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                Takumi
-              </p>
-              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-50">
-                匠 -takumi- プレゼン資料
-              </h3>
-
-              <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
-                <iframe
-                  src={takumiSlidesEmbedUrl}
-                  className="aspect-[16/9] w-full"
-                  title="匠 -takumi- プレゼン資料"
-                  loading="lazy"
-                  allowFullScreen
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
-            <CardContent className="p-8">
-              <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                Word Galaxy
-              </p>
-              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-stone-50">
-                ことばのほしぞら プレゼン資料
-              </h3>
-
-              <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
-                <iframe
-                  src={wordGalaxySlidesEmbedUrl}
-                  className="aspect-[16/9] w-full"
-                  title="ことばのほしぞら プレゼン資料"
-                  loading="lazy"
-                  allowFullScreen
-                />
-              </div>
-            </CardContent>
-          </Card>
+        <div className="mt-8 grid gap-5 lg:grid-cols-2 xl:grid-cols-4">
+          <SlideCard
+            eyebrow="ISDL Simulator"
+            title="研究室シミュレータ プレゼン資料"
+            src={isdlSlidesEmbedUrl}
+          />
+          <SlideCard
+            eyebrow="HochiMe"
+            title="放置Me プレゼン資料"
+            src={hochiMeSlidesEmbedUrl}
+          />
+          <SlideCard
+            eyebrow="Takumi"
+            title="匠 -takumi- プレゼン資料"
+            src={takumiSlidesEmbedUrl}
+          />
+          <SlideCard
+            eyebrow="Word Galaxy"
+            title="ことばのほしぞら プレゼン資料"
+            src={wordGalaxySlidesEmbedUrl}
+          />
         </div>
       </section>
 
@@ -569,7 +569,7 @@ export default function Home() {
               <p className="text-xs tracking-[0.24em] text-amber-200/70 uppercase">
                 Current Thesis
               </p>
-              <h3 className="mt-4 text-3xl font-semibold tracking-tight">
+              <h3 className="mt-4 text-3xl font-semibold">
                 EV充電ステーション配置最適化
               </h3>
               <p className="mt-6 leading-8 text-stone-300">
@@ -606,7 +606,7 @@ export default function Home() {
               <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
                 Latest Release
               </p>
-              <h3 className="mt-4 text-3xl font-semibold tracking-tight text-stone-50">
+              <h3 className="mt-4 text-3xl font-semibold text-stone-50">
                 だりぃ
               </h3>
               <p className="mt-2 text-stone-400">O-7z & 勝寿</p>
