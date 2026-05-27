@@ -118,7 +118,7 @@ const projects = [
     category: "AI / 3D Experience",
     highlights: ["Winner", "3D", "AI Agent"],
     description:
-      "Engineer Guild Hackathon 2026 presented by Mercari 優勝・賞金100万円獲得\n「放置Me」は、ユーザーのAIクローンが本人に代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出すWebアプリケーションです。私は主にSupabase、Gemini APIを用いたバックエンドとLLM連携を担当しました。",
+      "Engineer Guild Hackathon 2026 presented by 株式会社メルカリ 優勝・賞金100万円獲得\n「放置Me」は、ユーザーのAIクローンが本人に代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出すWebアプリケーションです。私は主にSupabase、Gemini APIを用いたバックエンドとLLM連携を担当しました。",
     url: "https://github.com/engineer-guild-hackathon-2026-05/team-05",
   },
   {
@@ -549,7 +549,7 @@ export default function Home() {
         <SectionHeading
           label="Music"
           title="音楽活動"
-          description="Hip hopからJ-Rockまで幅広い音楽を網羅"
+          description=""
         />
 
         <div className="mt-10 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
