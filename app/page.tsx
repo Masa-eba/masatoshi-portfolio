@@ -139,7 +139,7 @@ const projects = [
   {
     title: "匠 -takumi-",
     category: "Hackathon / Social Learning",
-    highlights: ["Hackathon", "Team Development"],
+    highlights: ["Award", "Hackathon", "Team Development"],
     description:
       "Engineer Guild Hackathon 2025 by AtCoder エムスリー賞受賞\n「匠 (Takumi)」は、学びの道のりを可視化し、仲間や「ちょっと先の先輩」との繋がりを通じて成長できる、ソーシャルラーニング・プラットフォームです。私は師弟関係をツリー構造で可視化する中核機能の設計・実装を担当しました。",
     url: "https://github.com/Engineer-Guild-Hackathon/team-4-app",
