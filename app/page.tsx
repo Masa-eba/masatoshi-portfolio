@@ -129,14 +129,6 @@ const strengths = [
 
 const projects = [
   {
-    title: "ISDLシミュレータ",
-    category: "Novel Game / Lab Experience",
-    highlights: ["Winner", "React", "FastAPI"],
-    description:
-      "同志社大学 知的システムデザイン研究室 ISDLハッカソン優勝\n「ISDLシミュレータ」は、ISDLでの1年間をノベルゲーム形式で体験し、役割選択や研究活動を通して学生生活の成長と人間関係の変化を楽しめるWebアプリケーションです。React + Vite、FastAPI、SQLiteで構成しました。",
-    url: "https://github.com/Masa-eba/isdl-hackathon-2025",
-  },
-  {
     title: "放置Me",
     category: "AI / 3D Experience",
     highlights: ["Winner", "3D", "AI Agent"],
@@ -159,6 +151,14 @@ const projects = [
     description:
       "技育CAMP ハッカソン Vol.6 努力賞受賞\n「ことばのほしぞら」は、単語間の関連性を可視化することで、より効果的な学習体験を提供するWebアプリケーションです。BERTで意味的類似性を算出し、2D/3D表示、検索、単語帳、テストまでを含む学習導線を構築しました。",
     url: "https://github.com/Masa-eba/Word_Galaxy",
+  },
+  {
+    title: "ISDLシミュレータ",
+    category: "Novel Game / Lab Experience",
+    highlights: ["Winner", "React", "FastAPI"],
+    description:
+      "同志社大学 知的システムデザイン研究室 ISDLハッカソン優勝\n「ISDLシミュレータ」は、ISDLでの1年間をノベルゲーム形式で体験し、役割選択や研究活動を通して学生生活の成長と人間関係の変化を楽しめるWebアプリケーションです。React + Vite、FastAPI、SQLiteで構成しました。",
+    url: "https://github.com/Masa-eba/isdl-hackathon-2025",
   },
 ];
 
@@ -531,11 +531,6 @@ export default function Home() {
 
         <div className="mt-8 grid gap-5 lg:grid-cols-2 xl:grid-cols-4">
           <SlideCard
-            eyebrow="ISDL Simulator"
-            title="研究室シミュレータ プレゼン資料"
-            src={isdlSlidesEmbedUrl}
-          />
-          <SlideCard
             eyebrow="HochiMe"
             title="放置Me プレゼン資料"
             src={hochiMeSlidesEmbedUrl}
@@ -549,6 +544,11 @@ export default function Home() {
             eyebrow="Word Galaxy"
             title="ことばのほしぞら プレゼン資料"
             src={wordGalaxySlidesEmbedUrl}
+          />
+          <SlideCard
+            eyebrow="ISDL Simulator"
+            title="研究室シミュレータ プレゼン資料"
+            src={isdlSlidesEmbedUrl}
           />
         </div>
       </section>
