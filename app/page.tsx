@@ -112,21 +112,6 @@ function TuneCoreLogo({ className }: BrandIconProps) {
   );
 }
 
-const strengths = [
-  {
-    title: "Research",
-    body: "UXsimを用いたEV充電ステーション配置最適化",
-  },
-  {
-    title: "Product",
-    body: "要件整理から設計、実装、リリースまで担当",
-  },
-  {
-    title: "Sound",
-    body: "作詞作曲 Beat Maker Guitar",
-  },
-];
-
 const projects = [
   {
     title: "放置Me",
@@ -357,6 +342,9 @@ export default function Home() {
 
             <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-300 sm:text-xl">
               同志社大学大学院 理工学研究科 情報工学専攻
+              <br />
+              知的システムデザイン研究室（ISDL）
+              <br />
               Singer Song Writer & BeatMaker
             </p>
 
@@ -415,32 +403,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-6xl px-6 py-20">
-        <SectionHeading
-          label="About"
-          title="研究 開発 音楽"
-          description=""
-        />
-
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {strengths.map((strength) => (
-            <Card
-              key={strength.title}
-              className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg"
-            >
-              <CardContent className="p-7">
-                <p className="text-sm font-medium text-stone-400">
-                  {strength.title}
-                </p>
-                <p className="mt-4 text-lg leading-8 text-stone-200">
-                  {strength.body}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
         </div>
       </section>
 
@@ -547,7 +509,7 @@ export default function Home() {
           />
           <SlideCard
             eyebrow="ISDL Simulator"
-            title="研究室シミュレータ プレゼン資料"
+            title="ISDLシミュレータ プレゼン資料"
             src={isdlSlidesEmbedUrl}
           />
         </div>
@@ -559,8 +521,8 @@ export default function Home() {
       >
         <SectionHeading
           label="Research"
-          title="研究テーマ"
-          description="交通シミュレーションを用いて、充電需要と交通流の両方を踏まえた配置最適化を検討しています。"
+          title="研究"
+          description=""
         />
 
         <div className="mt-10">
@@ -573,7 +535,7 @@ export default function Home() {
                 EV充電ステーション配置最適化
               </h3>
               <p className="mt-6 leading-8 text-stone-300">
-                UXsimを用いた交通流シミュレーションをもとに、充電需要と交通流の両方を考慮した配置最適化を研究しています。
+                交通シミュレーションを用いて、 EV充電ステーション配置最適化を行なっています。
               </p>
             </CardContent>
           </Card>
@@ -613,6 +575,7 @@ export default function Home() {
               <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
                 O-7z : lyric
                 勝寿 : beat
+                <br />
                 原点を回帰した伝説の一曲
               </p>
 
