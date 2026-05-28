@@ -120,6 +120,8 @@ const projects = [
     description:
       "Engineer Guild Hackathon 2026 presented by 株式会社メルカリ 優勝・賞金100万円獲得\n「放置Me」は、ユーザーのAIクローンが本人に代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出すWebアプリケーションです。私は主にSupabase、Gemini APIを用いたバックエンドとLLM連携を担当しました。",
     url: "https://github.com/engineer-guild-hackathon-2026-05/team-05",
+    slideUrl:
+      "https://www.canva.com/design/DAHKsWlJrzM/346qIoZLeeaV8ABgQlzPHQ/view?embed",
   },
   {
     title: "匠 -takumi-",
@@ -128,6 +130,8 @@ const projects = [
     description:
       "Engineer Guild Hackathon 2025 by AtCoder エムスリー賞受賞\n「匠 (Takumi)」は、学びの道のりを可視化し、仲間や「ちょっと先の先輩」との繋がりを通じて成長できる、ソーシャルラーニング・プラットフォームです。私は師弟関係をツリー構造で可視化する中核機能の設計・実装を担当しました。",
     url: "https://github.com/Engineer-Guild-Hackathon/team-4-app",
+    slideUrl:
+      "https://www.canva.com/design/DAGzTkaDnx4/-4KTiJNVV-PZ5cghKssGbw/view?embed",
   },
   {
     title: "Word Galaxy",
@@ -136,6 +140,8 @@ const projects = [
     description:
       "技育CAMP ハッカソン Vol.6 努力賞受賞\n「ことばのほしぞら」は、単語間の関連性を可視化することで、より効果的な学習体験を提供するWebアプリケーションです。BERTで意味的類似性を算出し、2D/3D表示、検索、単語帳、テストまでを含む学習導線を構築しました。",
     url: "https://github.com/Masa-eba/Word_Galaxy",
+    slideUrl:
+      "https://docs.google.com/presentation/d/16Fi5WfwiokDrPDSavv5lUgfpazfzo0fI/embed?start=false&loop=false&delayms=3000",
   },
   {
     title: "ISDLシミュレータ",
@@ -144,23 +150,13 @@ const projects = [
     description:
       "同志社大学 知的システムデザイン研究室 ISDLハッカソン優勝\n「ISDLシミュレータ」は、ISDLでの1年間をノベルゲーム形式で体験し、役割選択や研究活動を通して学生生活の成長と人間関係の変化を楽しめるWebアプリケーションです。React + Vite、FastAPI、SQLiteで構成しました。",
     url: "https://github.com/Masa-eba/isdl-hackathon-2025",
+    slideUrl:
+      "https://docs.google.com/presentation/d/e/2PACX-1vTAJ_aHn2aRKqLqqX2MyyoCRXrtjMAS-6MJJ1BovpeqSS5VQAo0WxAkSAQEU7GjBA/pubembed?start=false&loop=false&delayms=3000",
   },
 ];
 
 const youtubeEmbedUrl =
   "https://www.youtube.com/embed/T2-BBHQJNTs?list=RDT2-BBHQJNTs&start_radio=1";
-
-const takumiSlidesEmbedUrl =
-  "https://www.canva.com/design/DAGzTkaDnx4/-4KTiJNVV-PZ5cghKssGbw/view?embed";
-
-const wordGalaxySlidesEmbedUrl =
-  "https://docs.google.com/presentation/d/16Fi5WfwiokDrPDSavv5lUgfpazfzo0fI/embed?start=false&loop=false&delayms=3000";
-
-const hochiMeSlidesEmbedUrl =
-  "https://www.canva.com/design/DAHKsWlJrzM/346qIoZLeeaV8ABgQlzPHQ/view?embed";
-
-const isdlSlidesEmbedUrl =
-  "https://docs.google.com/presentation/d/e/2PACX-1vTAJ_aHn2aRKqLqqX2MyyoCRXrtjMAS-6MJJ1BovpeqSS5VQAo0WxAkSAQEU7GjBA/pubembed?start=false&loop=false&delayms=3000";
 
 const profileImageSrc = "/images/profile/masatoshi-portrait.jpg";
 const jacketImageSrc = "/images/music/darii-cover.png";
@@ -263,37 +259,6 @@ function badgeClassName(tone: "default" | "accent" = "default") {
 
 function isAccentBadge(label: string) {
   return ["Award", "Winner", "Certified"].includes(label);
-}
-
-function SlideCard({
-  eyebrow,
-  title,
-  src,
-}: {
-  eyebrow: string;
-  title: string;
-  src: string;
-}) {
-  return (
-    <Card className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
-      <CardContent className="p-8">
-        <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-          {eyebrow}
-        </p>
-        <h3 className="mt-4 text-2xl font-semibold text-stone-50">{title}</h3>
-
-        <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
-          <iframe
-            src={src}
-            className="aspect-[16/9] w-full"
-            title={title}
-            loading="lazy"
-            allowFullScreen
-          />
-        </div>
-      </CardContent>
-    </Card>
-  );
 }
 
 export default function Home() {
@@ -455,63 +420,70 @@ export default function Home() {
 
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {projects.map((project) => (
-            <a
+            <Card
               key={project.title}
-              href={project.url}
-              target="_blank"
-              rel="noreferrer"
-              className="block"
+              className="h-full border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg"
             >
-              <Card className="h-full border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg transition hover:-translate-y-1 hover:border-amber-200/20 hover:bg-white/8">
-                <CardContent className="p-8">
-                  <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                    {project.category}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.highlights.map((highlight) => (
-                      <Badge
-                        key={highlight}
-                        className={badgeClassName(
-                          isAccentBadge(highlight) ? "accent" : "default"
-                        )}
-                      >
-                        {highlight}
-                      </Badge>
-                    ))}
-                  </div>
-                  <h3 className="mt-4 text-2xl font-semibold text-stone-50">
-                    {project.title}
-                  </h3>
-                  <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
-                    {project.description}
-                  </p>
-                </CardContent>
-              </Card>
-            </a>
-          ))}
-        </div>
+              <CardContent className="p-8">
+                <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
+                  {project.category}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.highlights.map((highlight) => (
+                    <Badge
+                      key={highlight}
+                      className={badgeClassName(
+                        isAccentBadge(highlight) ? "accent" : "default"
+                      )}
+                    >
+                      {highlight}
+                    </Badge>
+                  ))}
+                </div>
+                <h3 className="mt-4 text-2xl font-semibold text-stone-50">
+                  {project.title}
+                </h3>
+                <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
+                  {project.description}
+                </p>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-2 xl:grid-cols-4">
-          <SlideCard
-            eyebrow="HochiMe"
-            title="放置Me プレゼン資料"
-            src={hochiMeSlidesEmbedUrl}
-          />
-          <SlideCard
-            eyebrow="Takumi"
-            title="匠 -takumi- プレゼン資料"
-            src={takumiSlidesEmbedUrl}
-          />
-          <SlideCard
-            eyebrow="Word Galaxy"
-            title="ことばのほしぞら プレゼン資料"
-            src={wordGalaxySlidesEmbedUrl}
-          />
-          <SlideCard
-            eyebrow="ISDL Simulator"
-            title="ISDLシミュレータ プレゼン資料"
-            src={isdlSlidesEmbedUrl}
-          />
+                <div className="mt-6 border-t border-white/10 pt-5">
+                  <p className="text-xs tracking-[0.24em] text-stone-500 uppercase">
+                    Links
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-3">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200 transition hover:border-amber-200/25 hover:bg-white/10 hover:text-stone-50"
+                    >
+                      <GitHubLogo className="size-4" />
+                      GitHub
+                    </a>
+                    <a
+                      href={project.slideUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200 transition hover:border-amber-200/25 hover:bg-white/10 hover:text-stone-50"
+                    >
+                      Slide
+                    </a>
+                  </div>
+                </div>
+
+                <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
+                  <iframe
+                    src={project.slideUrl}
+                    className="aspect-[16/9] w-full"
+                    title={`${project.title} プレゼン資料`}
+                    loading="lazy"
+                    allowFullScreen
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
