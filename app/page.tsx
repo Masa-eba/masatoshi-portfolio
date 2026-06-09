@@ -174,12 +174,26 @@ const recentActivities: RecentActivity[] = [
     date: "2026.05.24–26",
     category: "Award",
     title:
-      "Engineer Guild Hackathon 2026 presented by Mercari 優勝・賞金100万円獲得",
+      "Engineer Guild Hackathon 2026 presented by Mercari\n優勝・賞金100万円獲得",
     description:
       "AIクローンが未知の興味を探索するWebアプリケーション「放置Me」を開発し、優勝・賞金100万円を獲得しました。",
     url: "https://event.gaishishukatsu.com/hackathon?utm_source=twitter&utm_medium=twitter&utm_campaign=egh_202605",
     image: assetPath("/images/activities/Hackathon_2026.jpeg"),
-    imageAlt: "Engineer Guild Hackathon 2026 集合写真",
+    imageAlt: "Engineer Guild Hackathon 2026 記念写真",
+  },
+  {
+    date: "2026.04.01",
+    category: "Education",
+    title: "同志社大学大学院 入学",
+    description: "同志社大学大学院 理工学研究科 情報工学専攻に入学しました。",
+    url: "https://www.doshisha.ac.jp/",
+  },
+  {
+    date: "2026.03.22",
+    category: "Education",
+    title: "同志社大学 卒業",
+    description: "同志社大学 理工学部を卒業しました。",
+    url: "https://www.doshisha.ac.jp/",
   },
   {
     date: "2026.03.16–17",
@@ -189,8 +203,17 @@ const recentActivities: RecentActivity[] = [
       "「UXsimを用いたEV充電ステーション配置問題の定式化」について、交通流と充電需要を考慮した配置最適化の研究成果を発表しました。",
     url: "https://www.jpnsec.org/symposium202601.html",
     image: assetPath("/images/activities/Gakkai_2026.jpg"),
-    imageAlt: "第29回進化計算学会研究会での発表写真",
+    imageAlt: "第29回進化計算学会研究会でのポスターとの記念写真",
     imageOrientation: "portrait",
+  },
+  {
+    date: "2026.02.18",
+    category: "Research",
+    title: "卒業論文発表",
+    description: "卒業論文を発表しました。",
+    url: "https://sites.google.com/view/doshisha-isdl",
+    image: assetPath("/images/activities/graduate.JPG"),
+    imageAlt: "卒業論文発表の写真",
   },
   {
     date: "2025.10–",
@@ -208,7 +231,17 @@ const recentActivities: RecentActivity[] = [
       "学びの道のりと師弟関係を可視化するソーシャルラーニング・プラットフォーム「匠 -takumi-」を4人チームで開発しました。",
     url: "https://github.com/Engineer-Guild-Hackathon/team-4-app",
     image: assetPath("/images/activities/Hackathon_2025.jpg"),
-    imageAlt: "Engineer Guild Hackathon 2025 集合写真",
+    imageAlt: "Engineer Guild Hackathon 2025 受賞写真",
+  },
+  {
+    date: "2025.08.30–09.12",
+    category: "Award",
+    title: "ISDLハッカソン 優勝",
+    description:
+      "知的システムデザイン研究室内のハッカソンに参加し、研究室での1年間を体験できるノベルゲーム形式のWebアプリケーション「ISDLシミュレータ」を開発して優勝しました。",
+    url: "https://github.com/Masa-eba/isdl-hackathon-2025",
+    image: assetPath("/images/activities/Hackathon_isdl.jpg"),
+    imageAlt: "ISDLハッカソンの発表写真",
   },
   {
     date: "2025.07.03–13",
@@ -220,6 +253,14 @@ const recentActivities: RecentActivity[] = [
     image: assetPath("/images/activities/Word_Galaxy.png"),
     imageAlt: "技育CAMP ハッカソン Vol.6 努力賞の賞状",
     imageOrientation: "portrait",
+  },
+  {
+    date: "2025.05.18–06.22",
+    category: "Award",
+    title: "プログラミング初学者の会主催 WEBアプリハッカソン 最優秀賞",
+    description:
+      "社会人を含む参加者が集まる初心者向けハッカソンに参加しました。Gemini APIを用いてユーザーに合ったトレーニングを提案する筋トレアプリを開発し、最優秀賞を受賞しました。",
+    url: "https://pg-beginner-mtg.connpass.com/event/352268/",
   },
   {
     date: "2025.04–",
@@ -423,7 +464,7 @@ export default function Home() {
                 <p className="text-xs tracking-[0.24em] text-stone-500 uppercase">
                   {activity.category}
                 </p>
-                <h3 className="mt-3 text-xl font-semibold text-stone-50 sm:text-2xl">
+                <h3 className="mt-3 whitespace-pre-line text-xl font-semibold text-stone-50 sm:text-2xl">
                   <a
                     href={activity.url}
                     target="_blank"
