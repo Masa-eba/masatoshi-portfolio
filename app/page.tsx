@@ -158,8 +158,18 @@ const projects = [
 const youtubeEmbedUrl =
   "https://www.youtube.com/embed/T2-BBHQJNTs?list=RDT2-BBHQJNTs&start_radio=1";
 
-const profileImageSrc = "/images/profile/masatoshi-portrait.jpg";
-const jacketImageSrc = "/images/music/darii-cover.png";
+const assetBaseUrl = process.env.NEXT_PUBLIC_ASSET_BASE_URL?.replace(/\/$/, "");
+const assetPath = (path: string) => {
+  if (!assetBaseUrl) {
+    throw new Error("NEXT_PUBLIC_ASSET_BASE_URL is required");
+  }
+
+  return `${assetBaseUrl}${path}`;
+};
+
+const profileImageSrc = assetPath("/images/profile/masatoshi-portrait");
+const jacketImageSrc = assetPath("/images/music/darii-cover.png");
+const researchPosterSrc = assetPath("/images/research/poster.png");
 
 const musicLinks = [
   {
@@ -497,7 +507,7 @@ export default function Home() {
           description=""
         />
 
-        <div className="mt-10">
+        <div className="mt-10 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
           <Card className="border border-white/10 bg-white/5 text-stone-100 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-amber-200/70 uppercase">
@@ -507,8 +517,41 @@ export default function Home() {
                 EV充電ステーション配置最適化
               </h3>
               <p className="mt-6 leading-8 text-stone-300">
-                交通シミュレーションを用いて、 EV充電ステーション配置最適化を行なっています。
+                京田辺市のゼロカーボンシティ実現に向け、電気自動車の導入拡大を見据えた充電ステーション配置最適化に取り組んでいます。
+                交通流、充電需要、待ち時間、未充電量、設置コストを同時に評価し、利用者の負担と設置側のコストを抑える配置を検討しています。
+                第29回進化計算学会研究会で発表し、実観測データ、OpenStreetMap道路網、ODデータを組み合わせ、目的関数に基づいて候補配置を評価しました。
               </p>
+
+            </CardContent>
+          </Card>
+
+          <Card className="overflow-hidden border border-white/10 bg-white/5 text-stone-100 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
+            <CardContent className="p-8">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
+                    Conference Poster
+                  </p>
+                  <h3 className="mt-4 text-2xl font-semibold text-stone-50">
+                    学会発表ポスター
+                  </h3>
+                  <p className="mt-3 leading-7 text-stone-400">
+                    EV充電ステーション配置問題の定式化
+                  </p>
+                </div>
+                <Badge className={badgeClassName("accent")}>
+                  Poster
+                </Badge>
+              </div>
+
+              <div className="mt-6 aspect-[3/4] overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
+                <iframe
+                  src={researchPosterSrc}
+                  title="EV充電ステーション配置最適化の学会発表ポスター"
+                  className="h-full w-full"
+                  loading="lazy"
+                />
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -547,8 +590,6 @@ export default function Home() {
               <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
                 O-7z : lyric
                 勝寿 : beat
-                <br />
-                原点を回帰した伝説の一曲
               </p>
 
               <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">

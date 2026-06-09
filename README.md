@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# masatoshi-portfolio
 
-## Getting Started
+阿部勝寿のポートフォリオサイトです。Next.jsで実装し、AWS Amplifyでデプロイします。
 
-First, run the development server:
+## 開発
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで `http://localhost:3000` を開きます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 環境変数
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+画像・PDFなどの静的アセットはS3/CloudFrontから配信します。ローカル画像へのフォールバックはありません。
 
-## Learn More
+```bash
+NEXT_PUBLIC_ASSET_BASE_URL=https://d28dol01g1sjdx.cloudfront.net
+```
 
-To learn more about Next.js, take a look at the following resources:
+ローカルで確認する場合も、この環境変数を設定してください。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+NEXT_PUBLIC_ASSET_BASE_URL=https://d28dol01g1sjdx.cloudfront.net npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## AWS構成
 
-## Deploy on Vercel
+このサイトは以下の構成で運用します。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Route 53**: 独自ドメインを管理します。
+- **AWS Amplify**: GitHubと連携し、Next.jsアプリケーションをビルド・デプロイします。
+- **Amazon S3**: 本人写真、ジャケ写、研究ポスターなどの静的アセットを保存します。
+- **Amazon CloudFront**: S3上のアセットをHTTPSとキャッシュで高速に配信します。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+リクエストの流れは以下です。
+
+```text
+ユーザー
+  -> Route 53
+  -> AWS Amplify
+  -> Next.jsポートフォリオ
+  -> CloudFront
+  -> S3アセット
+```
+
+## アセット配置
+
+S3には、アプリが参照するパスに合わせて次のように配置します。
+
+```text
+s3://abemasatoshi-portfolio-assets/images/profile/masatoshi-portrait
+s3://abemasatoshi-portfolio-assets/images/music/darii-cover.png
+s3://abemasatoshi-portfolio-assets/images/research/poster.png
+```
+
+`poster.png` は現在PDFとして配信されているため、サイト内ではPDFビューアーとして埋め込みます。
+
+Amplifyには、CloudFrontのドメインまたはアセット配信用独自ドメインを設定します。
+
+```bash
+NEXT_PUBLIC_ASSET_BASE_URL=https://d28dol01g1sjdx.cloudfront.net
+```
+
+将来CloudFrontへ `assets.abemasatoshi.com` を設定した場合は、環境変数だけを変更します。コード内にCloudFrontドメインは直接記述していません。
+
+## 検証
+
+```bash
+NEXT_PUBLIC_ASSET_BASE_URL=https://d28dol01g1sjdx.cloudfront.net npm run typecheck
+NEXT_PUBLIC_ASSET_BASE_URL=https://d28dol01g1sjdx.cloudfront.net npm run lint
+NEXT_PUBLIC_ASSET_BASE_URL=https://d28dol01g1sjdx.cloudfront.net npm run build
+```
