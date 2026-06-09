@@ -108,13 +108,12 @@ export default function MusicPage() {
             Singer Song Writer / BeatMaker
           </p>
           <h1 className="mt-6 text-6xl leading-none font-semibold text-stone-50 sm:text-8xl">
-            音を作る。
+            音
             <br />
-            言葉を残す。
+            言葉
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-9 text-stone-300">
-            Hip hopを軸に、作詞・作曲・Beat Making・Guitarを横断して制作しています。
-            技術とは異なる方法で、感情と景色を形にします。
+            作詞・作曲・Beat Makingを横断して制作
           </p>
 
           <div className="mt-10 grid gap-3 sm:grid-cols-2">

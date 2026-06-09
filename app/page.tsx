@@ -158,6 +158,63 @@ const certifications = [
   },
 ];
 
+type RecentActivity = {
+  date: string;
+  category: string;
+  title: string;
+  description: string;
+  url: string;
+  image?: string;
+  imageAlt?: string;
+  imageOrientation?: "landscape" | "portrait";
+};
+
+const recentActivities: RecentActivity[] = [
+  {
+    date: "2026.05.24–26",
+    category: "Award",
+    title:
+      "Engineer Guild Hackathon 2026 presented by Mercari 優勝・賞金100万円獲得",
+    description:
+      "AIクローンが未知の興味を探索するWebアプリケーション「放置Me」を開発し、優勝・賞金100万円を獲得しました。",
+    url: "https://event.gaishishukatsu.com/hackathon?utm_source=twitter&utm_medium=twitter&utm_campaign=egh_202605",
+    image: assetPath("/images/activities/Hackathon_2026.jpeg"),
+    imageAlt: "Engineer Guild Hackathon 2026 集合写真",
+  },
+  {
+    date: "2026.03.16–17",
+    category: "Research",
+    title: "第29回進化計算学会研究会で研究発表",
+    description:
+      "「UXsimを用いたEV充電ステーション配置問題の定式化」について、交通流と充電需要を考慮した配置最適化の研究成果を発表しました。",
+    url: "https://www.jpnsec.org/symposium202601.html",
+    image: assetPath("/images/activities/Gakkai_2026.jpg"),
+    imageAlt: "第29回進化計算学会研究会での発表写真",
+    imageOrientation: "portrait",
+  },
+  {
+    date: "2025.09.03–20",
+    category: "Award",
+    title: "Engineer Guild Hackathon 2025 by AtCoder エムスリー賞受賞",
+    description:
+      "学びの道のりと師弟関係を可視化するソーシャルラーニング・プラットフォーム「匠 -takumi-」を4人チームで開発しました。",
+    url: "https://github.com/Engineer-Guild-Hackathon/team-4-app",
+    image: assetPath("/images/activities/Hackathon_2025.jpg"),
+    imageAlt: "Engineer Guild Hackathon 2025 集合写真",
+  },
+  {
+    date: "2025.07.03–13",
+    category: "Award",
+    title: "技育CAMP ハッカソン Vol.6 努力賞受賞",
+    description:
+      "単語間の関連性を星座のように可視化する学習Webアプリケーション「ことばのほしぞら / Word Galaxy」を4人チームで開発しました。",
+    url: "https://x.com/geek_pjt/status/1944327502555725871",
+    image: assetPath("/images/activities/Word_Galaxy.png"),
+    imageAlt: "技育CAMP ハッカソン Vol.6 努力賞の賞状",
+    imageOrientation: "portrait",
+  },
+];
+
 function SectionHeading({
   label,
   title,
@@ -210,6 +267,9 @@ export default function Home() {
             Masatoshi Abe
           </p>
           <nav className="hidden gap-4 text-sm text-stone-400 lg:flex">
+            <a href="#activity" className="transition hover:text-stone-50">
+              Activity
+            </a>
             <a href="#certifications" className="transition hover:text-stone-50">
               Certifications
             </a>
@@ -246,7 +306,14 @@ export default function Home() {
             <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-300 sm:text-xl">
               同志社大学大学院 理工学研究科 情報工学専攻
               <br />
-              知的システムデザイン研究室（ISDL）
+              <a
+                href="https://sites.google.com/view/doshisha-isdl"
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-amber-100"
+              >
+                知的システムデザイン研究室（ISDL）
+              </a>
               <br />
               Singer Song Writer & BeatMaker
             </p>
@@ -316,6 +383,80 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section
+        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
+        id="activity"
+      >
+        <SectionHeading
+          label="Recent Activity"
+          title="最近の活動"
+          description="開発、研究、受賞、音楽活動の更新を時系列で記録しています。"
+        />
+
+        <div className="relative mt-10 border-l border-white/10 pl-6 sm:pl-10">
+          {recentActivities.map((activity, index) => (
+            <article
+              key={`${activity.date}-${activity.title}`}
+              className={`relative grid gap-4 pb-10 sm:grid-cols-[120px_1fr] sm:gap-8 ${
+                index === recentActivities.length - 1 ? "pb-0" : ""
+              }`}
+            >
+              <span className="absolute -left-[1.78rem] top-1.5 size-3 rounded-full border-2 border-black bg-amber-200 shadow-[0_0_18px_rgba(251,191,36,0.6)] sm:-left-[2.78rem]" />
+              <time className="text-sm font-medium tracking-[0.16em] text-amber-100">
+                {activity.date}
+              </time>
+              <div className="border-b border-white/10 pb-10">
+                <p className="text-xs tracking-[0.24em] text-stone-500 uppercase">
+                  {activity.category}
+                </p>
+                <h3 className="mt-3 text-xl font-semibold text-stone-50 sm:text-2xl">
+                  <a
+                    href={activity.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition hover:text-amber-100"
+                  >
+                    {activity.title}
+                  </a>
+                </h3>
+                <p className="mt-4 max-w-3xl leading-8 text-stone-300">
+                  {activity.description}
+                </p>
+                {activity.image && activity.imageAlt ? (
+                  <a
+                    href={activity.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`relative mt-6 block overflow-hidden rounded-2xl border border-white/10 bg-black ${
+                      activity.imageOrientation === "portrait"
+                        ? "aspect-[3/4] max-w-lg"
+                        : "aspect-[16/9] max-w-3xl"
+                    }`}
+                  >
+                    <Image
+                      src={activity.image}
+                      alt={activity.imageAlt}
+                      fill
+                      unoptimized
+                      className={`transition duration-500 hover:scale-[1.02] ${
+                        activity.imageOrientation === "portrait"
+                          ? "object-contain"
+                          : "object-cover"
+                      }`}
+                      sizes={
+                        activity.imageOrientation === "portrait"
+                          ? "(min-width: 1024px) 32rem, 100vw"
+                          : "(min-width: 1024px) 48rem, 100vw"
+                      }
+                    />
+                  </a>
+                ) : null}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -459,6 +600,14 @@ export default function Home() {
                 交通流、充電需要、待ち時間、未充電量、設置コストを同時に評価し、利用者の負担と設置側のコストを抑える配置を検討しています。
                 第29回進化計算学会研究会で発表し、実観測データ、OpenStreetMap道路網、ODデータを組み合わせ、目的関数に基づいて候補配置を評価しました。
               </p>
+              <a
+                href="https://sites.google.com/view/doshisha-isdl"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-7 inline-flex rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200 transition hover:border-amber-200/25 hover:bg-white/10 hover:text-amber-100"
+              >
+                研究室のHPはこちら
+              </a>
 
             </CardContent>
           </Card>
