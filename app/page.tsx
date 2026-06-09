@@ -725,6 +725,7 @@ export default function Home() {
                 src={jacketImageSrc}
                 alt="だりぃ cover art"
                 fill
+                unoptimized
                 className="object-cover"
                 sizes="280px"
               />

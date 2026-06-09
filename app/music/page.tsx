@@ -149,6 +149,7 @@ export default function MusicPage() {
               src={jacketImageSrc}
               alt="だりぃ cover art"
               fill
+              unoptimized
               priority
               className="object-cover"
               sizes="(min-width: 1024px) 31rem, 90vw"
