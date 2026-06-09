@@ -193,6 +193,14 @@ const recentActivities: RecentActivity[] = [
     imageOrientation: "portrait",
   },
   {
+    date: "2025.10–",
+    category: "Career",
+    title: "長期インターンに勤務",
+    description:
+      "フロントエンドを中心に、バックエンドを含むWebサービスの機能開発・UI改善に取り組んでいます。",
+    url: "https://www.abemasatoshi.com/",
+  },
+  {
     date: "2025.09.03–20",
     category: "Award",
     title: "Engineer Guild Hackathon 2025 by AtCoder エムスリー賞受賞",
@@ -318,10 +326,6 @@ export default function Home() {
               Singer Song Writer & BeatMaker
             </p>
 
-            <p className="mt-6 max-w-2xl border-l border-amber-200/40 pl-5 leading-8 text-stone-400">
-              プロダクト開発、交通シミュレーション研究、音楽制作を横断し、アイデアを動く体験へ落とし込みます。
-            </p>
-
             <div className="mt-10 flex flex-wrap gap-3">
               <a
                 href="#projects"
@@ -393,16 +397,15 @@ export default function Home() {
         <SectionHeading
           label="Recent Activity"
           title="最近の活動"
-          description="開発、研究、受賞、音楽活動の更新を時系列で記録しています。"
+          description="活動を時系列で記録しています。"
         />
 
         <div className="relative mt-10 border-l border-white/10 pl-6 sm:pl-10">
           {recentActivities.map((activity, index) => (
             <article
               key={`${activity.date}-${activity.title}`}
-              className={`relative grid gap-4 pb-10 sm:grid-cols-[120px_1fr] sm:gap-8 ${
-                index === recentActivities.length - 1 ? "pb-0" : ""
-              }`}
+              className={`relative grid gap-4 pb-10 sm:grid-cols-[120px_1fr] sm:gap-8 ${index === recentActivities.length - 1 ? "pb-0" : ""
+                }`}
             >
               <span className="absolute -left-[1.78rem] top-1.5 size-3 rounded-full border-2 border-black bg-amber-200 shadow-[0_0_18px_rgba(251,191,36,0.6)] sm:-left-[2.78rem]" />
               <time className="text-sm font-medium tracking-[0.16em] text-amber-100">
@@ -430,22 +433,20 @@ export default function Home() {
                     href={activity.url}
                     target="_blank"
                     rel="noreferrer"
-                    className={`relative mt-6 block overflow-hidden rounded-2xl border border-white/10 bg-black ${
-                      activity.imageOrientation === "portrait"
-                        ? "aspect-[3/4] max-w-lg"
-                        : "aspect-[16/9] max-w-3xl"
-                    }`}
+                    className={`relative mt-6 block overflow-hidden rounded-2xl border border-white/10 bg-black ${activity.imageOrientation === "portrait"
+                      ? "aspect-[3/4] max-w-lg"
+                      : "aspect-[16/9] max-w-3xl"
+                      }`}
                   >
                     <Image
                       src={activity.image}
                       alt={activity.imageAlt}
                       fill
                       unoptimized
-                      className={`transition duration-500 hover:scale-[1.02] ${
-                        activity.imageOrientation === "portrait"
-                          ? "object-contain"
-                          : "object-cover"
-                      }`}
+                      className={`transition duration-500 hover:scale-[1.02] ${activity.imageOrientation === "portrait"
+                        ? "object-contain"
+                        : "object-cover"
+                        }`}
                       sizes={
                         activity.imageOrientation === "portrait"
                           ? "(min-width: 1024px) 32rem, 100vw"
@@ -651,9 +652,6 @@ export default function Home() {
               <p className="text-xs tracking-[0.3em] text-stone-400 uppercase">
                 Music
               </p>
-              <h2 className="mt-4 text-4xl font-semibold text-stone-50 sm:text-5xl">
-                音楽活動は、別の景色へ。
-              </h2>
               <p className="mt-5 max-w-2xl leading-8 text-stone-300">
                 Singer Song Writer & BeatMakerとしての作品、配信先、映像を専用ページにまとめています。
               </p>
