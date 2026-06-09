@@ -163,7 +163,7 @@ type RecentActivity = {
   category: string;
   title: string;
   description: string;
-  url: string;
+  url?: string;
   image?: string;
   imageAlt?: string;
   imageOrientation?: "landscape" | "portrait";
@@ -216,12 +216,11 @@ const recentActivities: RecentActivity[] = [
     imageAlt: "卒業論文発表の写真",
   },
   {
-    date: "2025.10–",
+    date: "2025.10–Present",
     category: "Career",
-    title: "長期インターンに勤務",
+    title: "Software Engineer Intern",
     description:
-      "フロントエンドを中心に、バックエンドを含むWebサービスの機能開発・UI改善に取り組んでいます。",
-    url: "https://www.abemasatoshi.com/",
+      "タレントプールサービスの開発に従事。Next.js、TypeScript、Ruby on Railsを用いたフロントエンド・バックエンド開発を担当。企業向け管理画面やユーザー向け機能の実装、UI改善、新機能開発に取り組んでいます。",
   },
   {
     date: "2025.09.03–20",
@@ -319,24 +318,27 @@ export default function Home() {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px] opacity-20" />
 
       <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 pb-16 pt-6 sm:pt-8">
-        <header className="sticky top-0 z-20 -mx-6 flex items-center justify-between border-b border-white/10 bg-black/35 px-6 pb-6 pt-2 backdrop-blur-xl sm:pt-4">
-          <p className="text-sm tracking-[0.28em] text-stone-400 uppercase">
+        <header className="sticky top-0 z-20 -mx-6 flex items-center gap-6 border-b border-white/10 bg-black/35 px-6 pb-4 pt-2 backdrop-blur-xl sm:justify-between sm:pb-6 sm:pt-4">
+          <p className="hidden shrink-0 text-sm tracking-[0.28em] text-stone-400 uppercase sm:block">
             Masatoshi Abe
           </p>
-          <nav className="hidden gap-4 text-sm text-stone-400 lg:flex">
-            <a href="#activity" className="transition hover:text-stone-50">
+          <nav
+            aria-label="メインナビゲーション"
+            className="flex w-full gap-5 overflow-x-auto text-sm text-stone-400 sm:w-auto"
+          >
+            <a href="#activity" className="shrink-0 transition hover:text-stone-50">
               Activity
             </a>
-            <a href="#certifications" className="transition hover:text-stone-50">
+            <a href="#certifications" className="shrink-0 transition hover:text-stone-50">
               Certifications
             </a>
-            <a href="#projects" className="transition hover:text-stone-50">
+            <a href="#projects" className="shrink-0 transition hover:text-stone-50">
               Projects
             </a>
-            <a href="#research" className="transition hover:text-stone-50">
+            <a href="#research" className="shrink-0 transition hover:text-stone-50">
               Research
             </a>
-            <Link href="/music" className="transition hover:text-stone-50">
+            <Link href="/music" className="shrink-0 transition hover:text-stone-50">
               Music
             </Link>
           </nav>
@@ -351,9 +353,7 @@ export default function Home() {
               <Badge className={badgeClassName()}>
                 Researcher
               </Badge>
-              <Badge className={badgeClassName()}>
-                Beatmaker
-              </Badge>
+              <Badge className={badgeClassName()}>BeatMaker</Badge>
             </div>
 
             <h1 className="mt-8 max-w-4xl text-5xl leading-[1.04] font-semibold text-stone-50 sm:text-7xl">
@@ -372,7 +372,7 @@ export default function Home() {
                 知的システムデザイン研究室（ISDL）
               </a>
               <br />
-              Singer Song Writer & BeatMaker
+              Singer-Songwriter & BeatMaker
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
@@ -465,14 +465,18 @@ export default function Home() {
                   {activity.category}
                 </p>
                 <h3 className="mt-3 whitespace-pre-line text-xl font-semibold text-stone-50 sm:text-2xl">
-                  <a
-                    href={activity.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="transition hover:text-amber-100"
-                  >
-                    {activity.title}
-                  </a>
+                  {activity.url ? (
+                    <a
+                      href={activity.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transition hover:text-amber-100"
+                    >
+                      {activity.title}
+                    </a>
+                  ) : (
+                    activity.title
+                  )}
                 </h3>
                 <p className="mt-4 max-w-3xl leading-8 text-stone-300">
                   {activity.description}
@@ -491,7 +495,6 @@ export default function Home() {
                       src={activity.image}
                       alt={activity.imageAlt}
                       fill
-                      unoptimized
                       className={`transition duration-500 hover:scale-[1.02] ${activity.imageOrientation === "portrait"
                         ? "object-contain"
                         : "object-cover"
@@ -705,7 +708,7 @@ export default function Home() {
                 description=""
               />
               <p className="mt-5 max-w-2xl leading-8 text-stone-300">
-                Singer Song Writer & BeatMakerとしての作品、配信先、映像を専用ページにまとめています。
+                Singer-Songwriter & BeatMakerとしての作品、配信先、映像を専用ページにまとめています。
               </p>
               <Link
                 href="/music"
@@ -722,7 +725,6 @@ export default function Home() {
                 src={jacketImageSrc}
                 alt="だりぃ cover art"
                 fill
-                unoptimized
                 className="object-cover"
                 sizes="280px"
               />

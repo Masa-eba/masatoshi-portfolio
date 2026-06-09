@@ -49,8 +49,13 @@ function InstagramLogo({ className }: LogoProps) {
 }
 
 export const metadata: Metadata = {
-  title: "音楽活動 | 阿部勝寿",
-  description: "Singer Song Writer & BeatMakerとしての阿部勝寿の音楽活動。",
+  title: "音楽活動",
+  description: "Singer-Songwriter & BeatMakerとしての阿部勝寿の音楽活動。",
+  openGraph: {
+    title: "音楽活動 | 阿部勝寿",
+    description: "Singer-Songwriter & BeatMakerとしての作品、配信先、映像。",
+    url: "/music",
+  },
 };
 
 const jacketImageSrc = assetPath("/images/music/darii-cover.png");
@@ -105,7 +110,7 @@ export default function MusicPage() {
       <section className="relative z-10 mx-auto grid min-h-[calc(100vh-104px)] w-full max-w-6xl items-center gap-12 px-6 pb-20 lg:grid-cols-[minmax(0,1fr)_minmax(360px,500px)]">
         <div>
           <p className="text-xs tracking-[0.38em] text-stone-500 uppercase">
-            Singer Song Writer / BeatMaker
+            Singer-Songwriter / BeatMaker
           </p>
           <h1 className="mt-6 text-6xl leading-none font-semibold text-stone-50 sm:text-8xl">
             音
@@ -144,7 +149,6 @@ export default function MusicPage() {
               src={jacketImageSrc}
               alt="だりぃ cover art"
               fill
-              unoptimized
               priority
               className="object-cover"
               sizes="(min-width: 1024px) 31rem, 90vw"
