@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "阿部勝寿 | Portfolio",
   description:
-    "阿部勝寿のポートフォリオ。研究、開発実績、技術スタック、音楽活動を掲載しています。",
+    "阿部勝寿のポートフォリオ。プロダクト開発、研究、音楽活動を掲載しています。",
 };
 
 export default function RootLayout({

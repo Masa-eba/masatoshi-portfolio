@@ -50,7 +50,7 @@ NEXT_PUBLIC_ASSET_BASE_URL=https://d28dol01g1sjdx.cloudfront.net npm run dev
 S3には、アプリが参照するパスに合わせて次のように配置します。
 
 ```text
-s3://abemasatoshi-portfolio-assets/images/profile/masatoshi-portrait
+s3://abemasatoshi-portfolio-assets/images/profile/masatoshi-portrait-v2
 s3://abemasatoshi-portfolio-assets/images/music/darii-cover.png
 s3://abemasatoshi-portfolio-assets/images/research/poster.png
 ```

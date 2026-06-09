@@ -3,8 +3,10 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { assetPath } from "@/lib/assets";
 
 type BrandIconProps = {
   className?: string;
@@ -49,45 +51,6 @@ function InstagramLogo({ className }: BrandIconProps) {
       <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-function SpotifyLogo({ className }: BrandIconProps) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      aria-hidden="true"
-      fill="currentColor"
-    >
-      <path d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.82 15.12a.9.9 0 0 1-1.24.3 9.96 9.96 0 0 0-8.36-.92.9.9 0 1 1-.57-1.7 11.75 11.75 0 0 1 9.88 1.08.9.9 0 0 1 .29 1.24Zm1.78-3.09a1.12 1.12 0 0 1-1.53.37 12.13 12.13 0 0 0-10.17-1.1 1.12 1.12 0 0 1-.69-2.13 14.38 14.38 0 0 1 12.07 1.31 1.12 1.12 0 0 1 .32 1.55Zm.15-3.2a1.35 1.35 0 0 1-1.84.44 14.93 14.93 0 0 0-12.47-1.36A1.35 1.35 0 0 1 3.65 6.8a17.62 17.62 0 0 1 14.72 1.6 1.35 1.35 0 0 1 .38 1.87Z" />
-    </svg>
-  );
-}
-
-function AppleMusicLogo({ className }: BrandIconProps) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      aria-hidden="true"
-      fill="currentColor"
-    >
-      <path d="M17.5 3.2v11.1a3.3 3.3 0 1 1-1.5-2.77V7.03l-6 1.2v8.07a3.3 3.3 0 1 1-1.5-2.77V5.7l9-1.8Z" />
-    </svg>
-  );
-}
-
-function YouTubeLogo({ className }: BrandIconProps) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      aria-hidden="true"
-      fill="currentColor"
-    >
-      <path d="M23 12s0-3.02-.39-4.48a2.8 2.8 0 0 0-1.97-1.97C19.18 5.16 12 5.16 12 5.16s-7.18 0-8.64.39A2.8 2.8 0 0 0 1.39 7.52C1 8.98 1 12 1 12s0 3.02.39 4.48a2.8 2.8 0 0 0 1.97 1.97c1.46.39 8.64.39 8.64.39s7.18 0 8.64-.39a2.8 2.8 0 0 0 1.97-1.97C23 15.02 23 12 23 12ZM9.7 15.75v-7.5L16 12l-6.3 3.75Z" />
     </svg>
   );
 }
@@ -155,44 +118,9 @@ const projects = [
   },
 ];
 
-const youtubeEmbedUrl =
-  "https://www.youtube.com/embed/T2-BBHQJNTs?list=RDT2-BBHQJNTs&start_radio=1";
-
-const assetBaseUrl = process.env.NEXT_PUBLIC_ASSET_BASE_URL?.replace(/\/$/, "");
-const assetPath = (path: string) => {
-  if (!assetBaseUrl) {
-    throw new Error("NEXT_PUBLIC_ASSET_BASE_URL is required");
-  }
-
-  return `${assetBaseUrl}${path}`;
-};
-
-const profileImageSrc = assetPath("/images/profile/masatoshi-portrait");
+const profileImageSrc = assetPath("/images/profile/masatoshi-portrait-v2");
 const jacketImageSrc = assetPath("/images/music/darii-cover.png");
 const researchPosterSrc = assetPath("/images/research/poster.png");
-
-const musicLinks = [
-  {
-    title: "Spotify",
-    url: "https://open.spotify.com/artist/4ZIHxbWmvE32SNAF6XMjOc",
-    icon: SpotifyLogo,
-  },
-  {
-    title: "Apple Music",
-    url: "https://music.apple.com/jp/album/%E3%81%A0%E3%82%8A%E3%81%83/1890611237?i=1890611241",
-    icon: AppleMusicLogo,
-  },
-  {
-    title: "YouTube",
-    url: "https://www.youtube.com/watch?v=T2-BBHQJNTs&list=OLAK5uy_l0bqCM8wOGUQNP81KtM8n8QrPvDhN4Roo",
-    icon: YouTubeLogo,
-  },
-  {
-    title: "Instagram",
-    url: "https://www.instagram.com/_masatoshi_for_eba_/",
-    icon: InstagramLogo,
-  },
-];
 
 const links = [
   {
@@ -291,9 +219,9 @@ export default function Home() {
             <a href="#research" className="transition hover:text-stone-50">
               Research
             </a>
-            <a href="#music" className="transition hover:text-stone-50">
+            <Link href="/music" className="transition hover:text-stone-50">
               Music
-            </a>
+            </Link>
           </nav>
         </header>
 
@@ -323,6 +251,10 @@ export default function Home() {
               Singer Song Writer & BeatMaker
             </p>
 
+            <p className="mt-6 max-w-2xl border-l border-amber-200/40 pl-5 leading-8 text-stone-400">
+              プロダクト開発、交通シミュレーション研究、音楽制作を横断し、アイデアを動く体験へ落とし込みます。
+            </p>
+
             <div className="mt-10 flex flex-wrap gap-3">
               <a
                 href="#projects"
@@ -338,6 +270,12 @@ export default function Home() {
               >
                 GitHub
               </a>
+              <Link
+                href="/music"
+                className="rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-stone-100 backdrop-blur-md transition hover:border-amber-200/30 hover:bg-white/10"
+              >
+                音楽活動を見る
+              </Link>
             </div>
           </div>
 
@@ -428,7 +366,7 @@ export default function Home() {
           description=""
         />
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+        <div className="mt-10 grid gap-5">
           {projects.map((project) => (
             <Card
               key={project.title}
@@ -457,9 +395,9 @@ export default function Home() {
                   {project.description}
                 </p>
 
-                <div className="mt-6 border-t border-white/10 pt-5">
+                <div className="mt-7 border-t border-white/10 pt-5">
                   <p className="text-xs tracking-[0.24em] text-stone-500 uppercase">
-                    Links
+                    関連リンク
                   </p>
                   <div className="mt-3 flex flex-wrap gap-3">
                     <a
@@ -469,7 +407,7 @@ export default function Home() {
                       className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200 transition hover:border-amber-200/25 hover:bg-white/10 hover:text-stone-50"
                     >
                       <GitHubLogo className="size-4" />
-                      GitHub
+                      GitHubを見る
                     </a>
                     <a
                       href={project.slideUrl}
@@ -477,7 +415,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200 transition hover:border-amber-200/25 hover:bg-white/10 hover:text-stone-50"
                     >
-                      Slide
+                      発表資料を見る
                     </a>
                   </div>
                 </div>
@@ -486,7 +424,7 @@ export default function Home() {
                   <iframe
                     src={project.slideUrl}
                     className="aspect-[16/9] w-full"
-                    title={`${project.title} プレゼン資料`}
+                    title={`${project.title} 発表資料`}
                     loading="lazy"
                     allowFullScreen
                   />
@@ -511,7 +449,7 @@ export default function Home() {
           <Card className="border border-white/10 bg-white/5 text-stone-100 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-amber-200/70 uppercase">
-                Current Thesis
+                研究テーマ
               </p>
               <h3 className="mt-4 text-3xl font-semibold">
                 EV充電ステーション配置最適化
@@ -530,7 +468,7 @@ export default function Home() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                    Conference Poster
+                    学会発表
                   </p>
                   <h3 className="mt-4 text-2xl font-semibold text-stone-50">
                     学会発表ポスター
@@ -557,67 +495,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
-        id="music"
-      >
-        <SectionHeading
-          label="Music"
-          title="音楽活動"
-          description=""
-        />
-
-        <div className="mt-10 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-          <Card className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
-            <CardContent className="p-8">
-              <div className="relative mb-6 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-black">
-                <Image
-                  src={jacketImageSrc}
-                  alt="だりぃ cover art"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 24rem, 100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-              <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                Latest Release
+      <section className="mx-auto w-full max-w-6xl px-6 py-20">
+        <div className="relative overflow-hidden border-y border-white/10 py-12 sm:py-16">
+          <div className="grid items-center gap-8 lg:grid-cols-[1fr_280px]">
+            <div>
+              <p className="text-xs tracking-[0.3em] text-stone-400 uppercase">
+                Music
               </p>
-              <h3 className="mt-4 text-3xl font-semibold text-stone-50">
-                だりぃ
-              </h3>
-              <p className="mt-2 text-stone-400">O-7z & 勝寿</p>
-              <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
-                O-7z : lyric
-                勝寿 : beat
+              <h2 className="mt-4 text-4xl font-semibold text-stone-50 sm:text-5xl">
+                音楽活動は、別の景色へ。
+              </h2>
+              <p className="mt-5 max-w-2xl leading-8 text-stone-300">
+                Singer Song Writer & BeatMakerとしての作品、配信先、映像を専用ページにまとめています。
               </p>
-
-              <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
-                <iframe
-                  className="aspect-video w-full"
-                  src={youtubeEmbedUrl}
-                  title="だりぃ - YouTube"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {musicLinks.map((link) => (
-              <a
-                key={link.title}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-6 py-6 text-base font-medium text-stone-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-amber-200/25 hover:bg-white/8 hover:text-stone-50"
+              <Link
+                href="/music"
+                className="mt-8 inline-flex rounded-2xl bg-stone-50 px-6 py-3 text-sm font-medium text-stone-950 transition hover:bg-amber-100"
               >
-                <span>{link.title}</span>
-                <link.icon className="size-4" />
-              </a>
-            ))}
+                音楽ページを見る
+              </Link>
+            </div>
+            <Link
+              href="/music"
+              className="relative aspect-square overflow-hidden rounded-full border border-white/15 bg-black shadow-[0_30px_100px_-50px_rgba(251,191,36,0.6)] transition hover:rotate-2 hover:scale-[1.02]"
+            >
+              <Image
+                src={jacketImageSrc}
+                alt="だりぃ cover art"
+                fill
+                unoptimized
+                className="object-cover"
+                sizes="280px"
+              />
+            </Link>
           </div>
         </div>
       </section>
