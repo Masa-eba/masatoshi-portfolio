@@ -221,6 +221,14 @@ const recentActivities: RecentActivity[] = [
     imageAlt: "技育CAMP ハッカソン Vol.6 努力賞の賞状",
     imageOrientation: "portrait",
   },
+  {
+    date: "2025.04–",
+    category: "Research",
+    title: "知的システムデザイン研究室（ISDL）に所属",
+    description:
+      "研究活動に取り組むほか、チーフとして研究室運営にも携わっています。",
+    url: "https://sites.google.com/view/doshisha-isdl",
+  },
 ];
 
 function SectionHeading({
@@ -404,11 +412,11 @@ export default function Home() {
           {recentActivities.map((activity, index) => (
             <article
               key={`${activity.date}-${activity.title}`}
-              className={`relative grid gap-4 pb-10 sm:grid-cols-[120px_1fr] sm:gap-8 ${index === recentActivities.length - 1 ? "pb-0" : ""
+              className={`relative grid gap-4 pb-10 sm:grid-cols-[170px_1fr] sm:gap-8 ${index === recentActivities.length - 1 ? "pb-0" : ""
                 }`}
             >
               <span className="absolute -left-[1.78rem] top-1.5 size-3 rounded-full border-2 border-black bg-amber-200 shadow-[0_0_18px_rgba(251,191,36,0.6)] sm:-left-[2.78rem]" />
-              <time className="text-sm font-medium tracking-[0.16em] text-amber-100">
+              <time className="whitespace-nowrap text-sm font-medium tracking-[0.12em] text-amber-100">
                 {activity.date}
               </time>
               <div className="border-b border-white/10 pb-10">
@@ -433,9 +441,9 @@ export default function Home() {
                     href={activity.url}
                     target="_blank"
                     rel="noreferrer"
-                    className={`relative mt-6 block overflow-hidden rounded-2xl border border-white/10 bg-black ${activity.imageOrientation === "portrait"
-                      ? "aspect-[3/4] max-w-lg"
-                      : "aspect-[16/9] max-w-3xl"
+                    className={`relative mx-auto mt-6 block overflow-hidden rounded-2xl border border-white/10 bg-black ${activity.imageOrientation === "portrait"
+                      ? "aspect-[3/4] w-full max-w-lg"
+                      : "aspect-[16/9] w-full max-w-3xl"
                       }`}
                   >
                     <Image
@@ -587,7 +595,7 @@ export default function Home() {
           description=""
         />
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="mt-10 grid gap-5">
           <Card className="border border-white/10 bg-white/5 text-stone-100 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-amber-200/70 uppercase">
@@ -632,7 +640,7 @@ export default function Home() {
                 </Badge>
               </div>
 
-              <div className="mt-6 aspect-[3/4] overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
+              <div className="mx-auto mt-6 aspect-[3/4] w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_22px_80px_-44px_rgba(0,0,0,1)]">
                 <iframe
                   src={researchPosterSrc}
                   title="EV充電ステーション配置最適化の学会発表ポスター"
@@ -649,9 +657,12 @@ export default function Home() {
         <div className="relative overflow-hidden border-y border-white/10 py-12 sm:py-16">
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_280px]">
             <div>
-              <p className="text-xs tracking-[0.3em] text-stone-400 uppercase">
-                Music
-              </p>
+
+              <SectionHeading
+                label="Music"
+                title="音楽活動"
+                description=""
+              />
               <p className="mt-5 max-w-2xl leading-8 text-stone-300">
                 Singer Song Writer & BeatMakerとしての作品、配信先、映像を専用ページにまとめています。
               </p>
