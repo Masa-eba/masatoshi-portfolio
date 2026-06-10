@@ -149,11 +149,13 @@ const certifications = [
   {
     title: "応用情報技術者試験",
     note: "情報処理技術者試験",
+    earned: "2025.10 合格",
     icon: BadgeCheck,
   },
   {
     title: "AWS Certified Cloud Practitioner",
     note: "AWS CLF",
+    earned: "2026.02 取得",
     icon: ShieldCheck,
   },
 ];
@@ -207,6 +209,13 @@ const recentActivities: RecentActivity[] = [
     imageOrientation: "portrait",
   },
   {
+    date: "2026.02",
+    category: "Certification",
+    title: "AWS Certified Cloud Practitioner 取得",
+    description:
+      "AWS認定資格 AWS Certified Cloud Practitioner（CLF）を取得しました。",
+  },
+  {
     date: "2026.02.18",
     category: "Research",
     title: "卒業論文発表",
@@ -214,6 +223,12 @@ const recentActivities: RecentActivity[] = [
     url: "https://sites.google.com/view/doshisha-isdl",
     image: assetPath("/images/activities/graduate.JPG"),
     imageAlt: "卒業論文発表の写真",
+  },
+  {
+    date: "2025.10",
+    category: "Certification",
+    title: "応用情報技術者試験 合格",
+    description: "情報処理技術者試験の応用情報技術者試験に合格しました。",
   },
   {
     date: "2025.10–Present",
@@ -543,6 +558,9 @@ export default function Home() {
                 </h3>
                 <p className="mt-3 text-sm tracking-[0.2em] text-stone-400 uppercase">
                   {certification.note}
+                </p>
+                <p className="mt-4 text-sm font-medium tracking-[0.14em] text-amber-100">
+                  {certification.earned}
                 </p>
               </CardContent>
             </Card>
