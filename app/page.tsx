@@ -173,10 +173,31 @@ type RecentActivity = {
 
 const recentActivities: RecentActivity[] = [
   {
-    date: "2026.05.24–26",
+    date: "2026.09.02 - 2026.09.18",
+    category: "Internship / Upcoming",
+    title: "LINEヤフー株式会社\nSummer Product Sprint 2026 in Fukuoka 参加予定",
+    description:
+      "13日間のチーム開発を通して、企画、設計、実装、品質改善、成果発表まで一貫したプロダクト開発に取り組む予定です。",
+  },
+  {
+    date: "2026.08.17 - 2026.08.21",
+    category: "Internship / Upcoming",
+    title: "株式会社朝日ネット\nWeb Engineer 5Days Internship 参加予定",
+    description:
+      "AWSを用いたWeb開発や、監視・運用、ネットワークインフラについて学ぶ予定です。",
+  },
+  {
+    date: "2026.08.10 - 2026.08.14",
+    category: "Internship / Upcoming",
+    title: "日本経済新聞社\nSoftware Engineer / Data Scientist Internship 参加予定",
+    description:
+      "実データやAPIを活用した、チームでのプロダクト開発に取り組む予定です。",
+  },
+  {
+    date: "2026.05.24 - 2026.05.26",
     category: "Award",
     title:
-      "Engineer Guild Hackathon 2026 presented by Mercari\n優勝・賞金100万円獲得",
+      "Engineer Guild Hackathon 2026 presented by 株式会社メルカリ\n優勝・賞金100万円獲得",
     description:
       "AIクローンが未知の興味を探索するWebアプリケーション「放置Me」を開発し、優勝・賞金100万円を獲得しました。",
     url: "https://event.gaishishukatsu.com/hackathon?utm_source=twitter&utm_medium=twitter&utm_campaign=egh_202605",
@@ -198,7 +219,7 @@ const recentActivities: RecentActivity[] = [
     url: "https://www.doshisha.ac.jp/",
   },
   {
-    date: "2026.03.16–17",
+    date: "2026.03.16 - 2026.03.17",
     category: "Research",
     title: "第29回進化計算学会研究会で研究発表",
     description:
@@ -231,16 +252,16 @@ const recentActivities: RecentActivity[] = [
     description: "情報処理技術者試験の応用情報技術者試験に合格しました。",
   },
   {
-    date: "2025.10–Present",
+    date: "2025.10 - 2026.05",
     category: "Career",
     title: "Software Engineer Intern",
     description:
-      "タレントプールサービスの開発に従事。Next.js、TypeScript、Ruby on Railsを用いたフロントエンド・バックエンド開発を担当。企業向け管理画面やユーザー向け機能の実装、UI改善、新機能開発に取り組んでいます。",
+      "タレントプールサービスの開発に従事。Next.js、TypeScript、Ruby on Railsを用いたフロントエンド・バックエンド開発を担当。企業向け管理画面やユーザー向け機能の実装、UI改善に取り組みました。",
   },
   {
-    date: "2025.09.03–20",
+    date: "2025.09.03 - 2025.09.20",
     category: "Award",
-    title: "Engineer Guild Hackathon 2025 by AtCoder エムスリー賞受賞",
+    title: "Engineer Guild Hackathon 2025 by AtCoder\nエムスリー賞受賞",
     description:
       "学びの道のりと師弟関係を可視化するソーシャルラーニング・プラットフォーム「匠 -takumi-」を4人チームで開発しました。",
     url: "https://github.com/Engineer-Guild-Hackathon/team-4-app",
@@ -248,7 +269,7 @@ const recentActivities: RecentActivity[] = [
     imageAlt: "Engineer Guild Hackathon 2025 受賞写真",
   },
   {
-    date: "2025.08.30–09.12",
+    date: "2025.08.30 - 2025.09.12",
     category: "Award",
     title: "ISDLハッカソン 優勝",
     description:
@@ -258,7 +279,7 @@ const recentActivities: RecentActivity[] = [
     imageAlt: "ISDLハッカソンの発表写真",
   },
   {
-    date: "2025.07.03–13",
+    date: "2025.07.03 - 2025.07.13",
     category: "Award",
     title: "技育CAMP ハッカソン Vol.6 努力賞受賞",
     description:
@@ -269,15 +290,15 @@ const recentActivities: RecentActivity[] = [
     imageOrientation: "portrait",
   },
   {
-    date: "2025.05.18–06.22",
+    date: "2025.05.18 - 2025.06.22",
     category: "Award",
-    title: "プログラミング初学者の会主催 WEBアプリハッカソン 最優秀賞",
+    title: "プログラミング初学者の会主催 WEBアプリハッカソン\n最優秀賞",
     description:
       "社会人を含む参加者が集まる初心者向けハッカソンに参加しました。Gemini APIを用いてユーザーに合ったトレーニングを提案する筋トレアプリを開発し、最優秀賞を受賞しました。",
     url: "https://pg-beginner-mtg.connpass.com/event/352268/",
   },
   {
-    date: "2025.04–",
+    date: "2025.04 - Present",
     category: "Research",
     title: "知的システムデザイン研究室（ISDL）に所属",
     description:
@@ -468,7 +489,7 @@ export default function Home() {
           {recentActivities.map((activity, index) => (
             <article
               key={`${activity.date}-${activity.title}`}
-              className={`relative grid gap-4 pb-10 sm:grid-cols-[170px_1fr] sm:gap-8 ${index === recentActivities.length - 1 ? "pb-0" : ""
+              className={`relative grid gap-4 pb-10 sm:grid-cols-[220px_1fr] sm:gap-8 ${index === recentActivities.length - 1 ? "pb-0" : ""
                 }`}
             >
               <span className="absolute -left-[1.78rem] top-1.5 size-3 rounded-full border-2 border-black bg-amber-200 shadow-[0_0_18px_rgba(251,191,36,0.6)] sm:-left-[2.78rem]" />
