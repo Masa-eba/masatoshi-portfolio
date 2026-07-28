@@ -200,7 +200,7 @@ const recentActivities: RecentActivity[] = [
       "Engineer Guild Hackathon 2026 presented by 株式会社メルカリ\n優勝・賞金100万円獲得",
     description:
       "AIクローンが未知の興味を探索するWebアプリケーション「放置Me」を開発し、優勝・賞金100万円を獲得しました。",
-    url: "https://event.gaishishukatsu.com/hackathon?utm_source=twitter&utm_medium=twitter&utm_campaign=egh_202605",
+    url: "https://careers.mercari.com/mercan/articles/62377/",
     image: assetPath("/images/activities/Hackathon_2026.jpeg"),
     imageAlt: "Engineer Guild Hackathon 2026 記念写真",
   },
