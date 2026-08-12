@@ -164,7 +164,7 @@ type RecentActivity = {
   date: string;
   category: string;
   title: string;
-  description: string;
+  description?: string;
   url?: string;
   image?: string;
   imageAlt?: string;
@@ -176,22 +176,21 @@ const recentActivities: RecentActivity[] = [
     date: "2026.09.02 - 2026.09.18",
     category: "Internship / Upcoming",
     title: "LINEヤフー株式会社\nSummer Product Sprint 2026 in Fukuoka 参加予定",
-    description:
-      "13日間のチーム開発を通して、企画、設計、実装、品質改善、成果発表まで一貫したプロダクト開発に取り組む予定です。",
+  },
+  {
+    date: "2026.08.22",
+    category: "Internship / Upcoming",
+    title: "朝日新聞社\n1day 参加予定",
   },
   {
     date: "2026.08.17 - 2026.08.21",
     category: "Internship / Upcoming",
     title: "株式会社朝日ネット\nWeb Engineer 5Days Internship 参加予定",
-    description:
-      "AWSを用いたWeb開発や、監視・運用、ネットワークインフラについて学ぶ予定です。",
   },
   {
     date: "2026.08.10 - 2026.08.14",
-    category: "Internship / Upcoming",
-    title: "日本経済新聞社\nSoftware Engineer / Data Scientist Internship 参加予定",
-    description:
-      "実データやAPIを活用した、チームでのプロダクト開発に取り組む予定です。",
+    category: "Internship",
+    title: "日本経済新聞社\nSoftware Engineer / Data Scientist Internship 参加",
   },
   {
     date: "2026.05.24 - 2026.05.26",
@@ -514,9 +513,11 @@ export default function Home() {
                     activity.title
                   )}
                 </h3>
-                <p className="mt-4 max-w-3xl leading-8 text-stone-300">
-                  {activity.description}
-                </p>
+                {activity.description ? (
+                  <p className="mt-4 max-w-3xl leading-8 text-stone-300">
+                    {activity.description}
+                  </p>
+                ) : null}
                 {activity.image && activity.imageAlt ? (
                   <a
                     href={activity.url}
