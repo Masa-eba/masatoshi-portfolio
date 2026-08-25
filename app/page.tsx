@@ -81,7 +81,7 @@ const projects = [
     category: "AI / 3D Experience",
     highlights: ["Winner", "3D", "AI Agent"],
     description:
-      "Engineer Guild Hackathon 2026 presented by 株式会社メルカリ 優勝・賞金100万円獲得\n「放置Me」は、ユーザーのAIクローンが本人に代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出すWebアプリケーションです。私は主にSupabase、Gemini APIを用いたバックエンドとLLM連携を担当しました。",
+      "Engineer Guild Hackathon 2026 presented by 株式会社メルカリ 優勝・賞金100万円獲得\n「放置Me」は、ユーザーのAIクローンが本人に代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出すWebアプリケーションです。SupabaseとGemini APIを用いたバックエンド開発、LLM連携を主に担当しました。",
     url: "https://github.com/engineer-guild-hackathon-2026-05/team-05",
     slideUrl:
       "https://www.canva.com/design/DAHKsWlJrzM/346qIoZLeeaV8ABgQlzPHQ/view?embed",
@@ -101,7 +101,7 @@ const projects = [
     category: "NLP / Visualization",
     highlights: ["Award", "BERT", "2D / 3D"],
     description:
-      "技育CAMP ハッカソン Vol.6 努力賞受賞\n「ことばのほしぞら」は、単語間の関連性を可視化することで、より効果的な学習体験を提供するWebアプリケーションです。BERTで意味的類似性を算出し、2D/3D表示、検索、単語帳、テストまでを含む学習導線を構築しました。",
+      "技育CAMP ハッカソン Vol.6 努力賞受賞\n「ことばのほしぞら」は、単語間の関連性を星座のように可視化し、関係性をたどりながら理解を深められる学習Webアプリケーションです。BERTで意味的類似性を算出し、2D/3D表示、検索、単語帳、テストまでを含む学習導線を構築しました。",
     url: "https://github.com/Masa-eba/Word_Galaxy",
     slideUrl:
       "https://docs.google.com/presentation/d/16Fi5WfwiokDrPDSavv5lUgfpazfzo0fI/embed?start=false&loop=false&delayms=3000",
@@ -111,7 +111,7 @@ const projects = [
     category: "Novel Game / Lab Experience",
     highlights: ["Winner", "React", "FastAPI"],
     description:
-      "同志社大学 知的システムデザイン研究室 ISDLハッカソン優勝\n「ISDLシミュレータ」は、ISDLでの1年間をノベルゲーム形式で体験し、役割選択や研究活動を通して学生生活の成長と人間関係の変化を楽しめるWebアプリケーションです。React + Vite、FastAPI、SQLiteで構成しました。",
+      "同志社大学 知的システムデザイン研究室 ISDLハッカソン優勝\n「ISDLシミュレータ」は、ISDLでの1年間をノベルゲーム形式で体験できるWebアプリケーションです。役割選択、研究活動、イベント、会話を通して、学生生活の成長と人間関係の変化を表現しました。React + Vite、FastAPI、SQLiteで構成しています。",
     url: "https://github.com/Masa-eba/isdl-hackathon-2025",
     slideUrl:
       "https://docs.google.com/presentation/d/e/2PACX-1vTAJ_aHn2aRKqLqqX2MyyoCRXrtjMAS-6MJJ1BovpeqSS5VQAo0WxAkSAQEU7GjBA/pubembed?start=false&loop=false&delayms=3000",
@@ -174,23 +174,18 @@ type RecentActivity = {
 const recentActivities: RecentActivity[] = [
   {
     date: "2026.09.02 - 2026.09.18",
-    category: "Internship / Upcoming",
-    title: "LINEヤフー株式会社\nSummer Product Sprint 2026 in Fukuoka 参加予定",
+    category: "Internship",
+    title: "LINEヤフー株式会社",
   },
   {
     date: "2026.08.22",
-    category: "Internship / Upcoming",
-    title: "朝日新聞社\n1day 参加予定",
-  },
-  {
-    date: "2026.08.17 - 2026.08.21",
-    category: "Internship / Upcoming",
-    title: "株式会社朝日ネット\nWeb Engineer 5Days Internship 参加予定",
+    category: "Internship",
+    title: "朝日新聞社",
   },
   {
     date: "2026.08.10 - 2026.08.14",
     category: "Internship",
-    title: "日本経済新聞社\nSoftware Engineer / Data Scientist Internship 参加",
+    title: "日本経済新聞社",
   },
   {
     date: "2026.05.24 - 2026.05.26",
@@ -198,7 +193,7 @@ const recentActivities: RecentActivity[] = [
     title:
       "Engineer Guild Hackathon 2026 presented by 株式会社メルカリ\n優勝・賞金100万円獲得",
     description:
-      "AIクローンが未知の興味を探索するWebアプリケーション「放置Me」を開発し、優勝・賞金100万円を獲得しました。",
+      "ユーザーのAIクローンが未知の興味を探索するWebアプリケーション「放置Me」を開発し、優勝・賞金100万円を獲得しました。",
     url: "https://careers.mercari.com/mercan/articles/62377/",
     image: assetPath("/images/activities/Hackathon_2026.jpeg"),
     imageAlt: "Engineer Guild Hackathon 2026 記念写真",
@@ -233,7 +228,7 @@ const recentActivities: RecentActivity[] = [
     category: "Certification",
     title: "AWS Certified Cloud Practitioner 取得",
     description:
-      "AWS認定資格 AWS Certified Cloud Practitioner（CLF）を取得しました。",
+      "AWS Certified Cloud Practitioner（CLF）を取得しました。",
   },
   {
     date: "2026.02.18",
@@ -248,14 +243,14 @@ const recentActivities: RecentActivity[] = [
     date: "2025.10",
     category: "Certification",
     title: "応用情報技術者試験 合格",
-    description: "情報処理技術者試験の応用情報技術者試験に合格しました。",
+    description: "情報処理技術者試験 応用情報技術者試験に合格しました。",
   },
   {
     date: "2025.10 - 2026.05",
     category: "Career",
     title: "Software Engineer Intern",
     description:
-      "タレントプールサービスの開発に従事。Next.js、TypeScript、Ruby on Railsを用いたフロントエンド・バックエンド開発を担当。企業向け管理画面やユーザー向け機能の実装、UI改善に取り組みました。",
+      "タレントプールサービスの開発に従事しました。Next.js、TypeScript、Ruby on Railsを用いたフロントエンド・バックエンド開発を担当し、企業向け管理画面やユーザー向け機能の実装、UI改善に取り組みました。",
   },
   {
     date: "2025.09.03 - 2025.09.20",
@@ -272,7 +267,7 @@ const recentActivities: RecentActivity[] = [
     category: "Award",
     title: "ISDLハッカソン 優勝",
     description:
-      "知的システムデザイン研究室内のハッカソンに参加し、研究室での1年間を体験できるノベルゲーム形式のWebアプリケーション「ISDLシミュレータ」を開発して優勝しました。",
+      "知的システムデザイン研究室内のハッカソンで、研究室での1年間を体験できるノベルゲーム形式のWebアプリケーション「ISDLシミュレータ」を開発し、優勝しました。",
     url: "https://github.com/Masa-eba/isdl-hackathon-2025",
     image: assetPath("/images/activities/Hackathon_isdl.jpg"),
     imageAlt: "ISDLハッカソンの発表写真",
@@ -293,7 +288,7 @@ const recentActivities: RecentActivity[] = [
     category: "Award",
     title: "プログラミング初学者の会主催 WEBアプリハッカソン\n最優秀賞",
     description:
-      "社会人を含む参加者が集まる初心者向けハッカソンに参加しました。Gemini APIを用いてユーザーに合ったトレーニングを提案する筋トレアプリを開発し、最優秀賞を受賞しました。",
+      "社会人を含む参加者が集まる初心者向けハッカソンで、Gemini APIを用いてユーザーに合ったトレーニングを提案する筋トレアプリを開発し、最優秀賞を受賞しました。",
     url: "https://pg-beginner-mtg.connpass.com/event/352268/",
   },
   {
@@ -301,7 +296,7 @@ const recentActivities: RecentActivity[] = [
     category: "Research",
     title: "知的システムデザイン研究室（ISDL）に所属",
     description:
-      "研究活動に取り組むほか、チーフとして研究室運営にも携わっています。",
+      "研究活動に取り組みながら、チーフとして研究室運営にも携わっています。",
     url: "https://sites.google.com/view/doshisha-isdl",
   },
 ];
@@ -407,7 +402,7 @@ export default function Home() {
                 知的システムデザイン研究室（ISDL）
               </a>
               <br />
-              Singer-Songwriter & BeatMaker
+              Singer-Songwriter / BeatMaker
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
@@ -699,7 +694,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="mt-7 inline-flex rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200 transition hover:border-amber-200/25 hover:bg-white/10 hover:text-amber-100"
               >
-                研究室のHPはこちら
+                研究室サイトを見る
               </a>
 
             </CardContent>
@@ -748,7 +743,7 @@ export default function Home() {
                 description=""
               />
               <p className="mt-5 max-w-2xl leading-8 text-stone-300">
-                Singer-Songwriter & BeatMakerとしての作品、配信先、映像を専用ページにまとめています。
+                Singer-Songwriter / BeatMakerとしての作品、配信先、映像を専用ページにまとめています。
               </p>
               <Link
                 href="/music"

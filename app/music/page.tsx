@@ -50,10 +50,10 @@ function InstagramLogo({ className }: LogoProps) {
 
 export const metadata: Metadata = {
   title: "音楽活動",
-  description: "Singer-Songwriter & BeatMakerとしての阿部勝寿の音楽活動。",
+  description: "Singer-Songwriter / BeatMakerとしての阿部勝寿の音楽活動。",
   openGraph: {
     title: "音楽活動 | 阿部勝寿",
-    description: "Singer-Songwriter & BeatMakerとしての作品、配信先、映像。",
+    description: "Singer-Songwriter / BeatMakerとしての作品、配信先、映像。",
     url: "/music",
   },
 };
@@ -118,7 +118,7 @@ export default function MusicPage() {
             言葉
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-9 text-stone-300">
-            作詞・作曲・Beat Makingを横断して制作
+            作詞・作曲・ビートメイクを行っています。
           </p>
 
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
@@ -163,7 +163,7 @@ export default function MusicPage() {
                 <p className="mt-2 text-stone-400">O-7z & 勝寿</p>
               </div>
               <p className="text-right text-sm leading-6 text-stone-500">
-                O-7z : lyric
+                O-7z : lyrics
                 <br />
                 勝寿 : beat
               </p>
