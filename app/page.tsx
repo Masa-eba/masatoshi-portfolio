@@ -158,6 +158,12 @@ const certifications = [
     earned: "2026.02 取得",
     icon: ShieldCheck,
   },
+  {
+    title: "AWS Certified Solutions Architect - Associate",
+    note: "AWS SAA",
+    earned: "2026.08 取得",
+    icon: ShieldCheck,
+  },
 ];
 
 type RecentActivity = {
@@ -176,6 +182,13 @@ const recentActivities: RecentActivity[] = [
     date: "2026.09.02 - 2026.09.18",
     category: "Internship",
     title: "LINEヤフー株式会社",
+  },
+  {
+    date: "2026.08.28",
+    category: "Certification",
+    title: "AWS Certified Solutions Architect - Associate 取得",
+    description:
+      "AWS Certified Solutions Architect - Associate（SAA）を取得しました。",
   },
   {
     date: "2026.08.22",
@@ -403,6 +416,8 @@ export default function Home() {
               </a>
               <br />
               Singer-Songwriter / BeatMaker
+              <br />
+              AWSを活用したクラウド基盤の設計・構築にも取り組んでいます。
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
