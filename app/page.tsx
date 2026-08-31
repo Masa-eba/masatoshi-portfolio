@@ -164,6 +164,12 @@ const certifications = [
     earned: "2026.08 取得",
     icon: ShieldCheck,
   },
+  {
+    title: "AWS Certified AI Practitioner",
+    note: "AWS AIF",
+    earned: "2026.08 取得",
+    icon: ShieldCheck,
+  },
 ];
 
 type RecentActivity = {
@@ -182,6 +188,12 @@ const recentActivities: RecentActivity[] = [
     date: "2026.09.02 - 2026.09.18",
     category: "Internship",
     title: "LINEヤフー株式会社",
+  },
+  {
+    date: "2026.08.31",
+    category: "Certification",
+    title: "AWS Certified AI Practitioner 取得",
+    description: "AWS Certified AI Practitioner（AIF）を取得しました。",
   },
   {
     date: "2026.08.28",
@@ -355,6 +367,49 @@ function isAccentBadge(label: string) {
   return ["Award", "Winner", "Certified"].includes(label);
 }
 
+function CertificationsSection() {
+  return (
+    <section
+      className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-16"
+      id="certifications"
+    >
+      <SectionHeading
+        label="Certifications"
+        title="取得資格"
+        description="AWSを中心に、クラウド設計・構築の基礎から実践的なアーキテクチャ設計まで学習しています。"
+      />
+
+      <div className="mt-10 grid gap-4 md:grid-cols-3">
+        {certifications.map((certification) => (
+          <Card
+            key={certification.title}
+            className="group relative overflow-hidden border border-amber-200/18 bg-gradient-to-br from-amber-200/12 via-white/6 to-white/[0.03] shadow-[0_28px_90px_-46px_rgba(251,191,36,0.7)] backdrop-blur-lg transition hover:-translate-y-1 hover:border-amber-200/35"
+          >
+            <div className="pointer-events-none absolute -right-12 -top-12 size-32 rounded-full bg-amber-200/12 blur-2xl transition group-hover:bg-amber-200/20" />
+            <CardContent className="relative p-8">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex size-16 items-center justify-center rounded-3xl border border-amber-200/20 bg-black/30 text-amber-100 shadow-[0_0_32px_rgba(251,191,36,0.16)]">
+                  <certification.icon className="size-8" />
+                </div>
+                <Badge className={badgeClassName("accent")}>Certified</Badge>
+              </div>
+              <h3 className="mt-6 text-2xl leading-tight font-semibold text-stone-50">
+                {certification.title}
+              </h3>
+              <p className="mt-4 text-sm tracking-[0.2em] text-stone-400 uppercase">
+                {certification.note}
+              </p>
+              <p className="mt-5 text-sm font-medium tracking-[0.14em] text-amber-100">
+                {certification.earned}
+              </p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <main className="relative overflow-hidden text-stone-100">
@@ -369,11 +424,11 @@ export default function Home() {
             aria-label="メインナビゲーション"
             className="flex w-full gap-5 overflow-x-auto text-sm text-stone-400 sm:w-auto"
           >
-            <a href="#activity" className="shrink-0 transition hover:text-stone-50">
-              Activity
-            </a>
             <a href="#certifications" className="shrink-0 transition hover:text-stone-50">
               Certifications
+            </a>
+            <a href="#activity" className="shrink-0 transition hover:text-stone-50">
+              Activity
             </a>
             <a href="#projects" className="shrink-0 transition hover:text-stone-50">
               Projects
@@ -484,6 +539,8 @@ export default function Home() {
         </div>
       </section>
 
+      <CertificationsSection />
+
       <section
         className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
         id="activity"
@@ -556,46 +613,6 @@ export default function Home() {
                 ) : null}
               </div>
             </article>
-          ))}
-        </div>
-      </section>
-
-      <section
-        className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
-        id="certifications"
-      >
-        <SectionHeading
-          label="Certifications"
-          title="資格"
-          description=""
-        />
-
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {certifications.map((certification) => (
-            <Card
-              key={certification.title}
-              className="border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg"
-            >
-              <CardContent className="p-8">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex size-14 items-center justify-center rounded-2xl border border-white/10 bg-white/8 text-amber-100 shadow-[0_0_24px_rgba(251,191,36,0.08)]">
-                    <certification.icon className="size-7" />
-                  </div>
-                  <Badge className={badgeClassName("accent")}>
-                    Certified
-                  </Badge>
-                </div>
-                <h3 className="mt-4 text-2xl font-semibold text-stone-50">
-                  {certification.title}
-                </h3>
-                <p className="mt-3 text-sm tracking-[0.2em] text-stone-400 uppercase">
-                  {certification.note}
-                </p>
-                <p className="mt-4 text-sm font-medium tracking-[0.14em] text-amber-100">
-                  {certification.earned}
-                </p>
-              </CardContent>
-            </Card>
           ))}
         </div>
       </section>
