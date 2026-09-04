@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | 阿部勝寿",
   },
   description:
-    "ソフトウェア開発、EV充電ステーション配置最適化の研究、音楽制作に取り組む阿部勝寿のポートフォリオ。",
+    "ソフトウェア開発、EV充電ステーション配置最適化の研究に取り組む阿部勝寿のポートフォリオ。",
   authors: [{ name: "阿部勝寿", url: "https://www.abemasatoshi.com" }],
   creator: "阿部勝寿",
   openGraph: {
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     siteName: "Masatoshi Abe Portfolio",
     title: "阿部勝寿 | Software Engineer",
     description:
-      "ソフトウェア開発、研究、音楽制作に取り組む阿部勝寿のポートフォリオ。",
+      "ソフトウェア開発、研究に取り組む阿部勝寿のポートフォリオ。",
   },
   twitter: {
     card: "summary_large_image",
     title: "阿部勝寿 | Software Engineer",
     description:
-      "ソフトウェア開発、研究、音楽制作に取り組む阿部勝寿のポートフォリオ。",
+      "ソフトウェア開発、研究に取り組む阿部勝寿のポートフォリオ。",
   },
 };
 

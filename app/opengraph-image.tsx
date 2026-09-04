@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Masatoshi Abe - Software Engineer, Researcher, BeatMaker";
+export const alt = "Masatoshi Abe - Software Engineer, Researcher";
 export const size = {
   width: 1200,
   height: 630,
@@ -42,7 +42,7 @@ export default function OpenGraphImage() {
               Masatoshi Abe
             </div>
             <div style={{ color: "#b9b4aa", display: "flex", fontSize: 28, marginTop: 24 }}>
-              Software Engineer / Researcher / BeatMaker
+              Software Engineer / Researcher
             </div>
           </div>
           <div style={{ color: "#8e887d", display: "flex", fontSize: 20 }}>

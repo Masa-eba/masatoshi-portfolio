@@ -1,10 +1,18 @@
 # Masatoshi Portfolio
 
-阿部勝寿の個人ポートフォリオサイトです。プロダクト開発、研究、音楽活動、最近の活動を掲載しています。
+阿部勝寿の個人ポートフォリオサイトです。プロダクト開発、研究、最近の活動を掲載しています。
 
 ## URL
 
 https://www.abemasatoshi.com/
+
+## サイト構成
+
+- Next.js App Routerで構築
+- AWS Amplifyでサイト本体をビルド・デプロイ
+- 画像・PDFなどの静的アセットはAmazon S3に保管
+- S3の静的アセットはAmazon CloudFront経由で配信
+- 独自ドメイン `abemasatoshi.com` はAmazon Route 53で管理
 
 ## 使用技術
 
@@ -19,16 +27,15 @@ https://www.abemasatoshi.com/
 
 ## AWS構成
 
-- Route 53で独自ドメインを管理
-- AWS AmplifyでNext.jsアプリケーションをビルド・デプロイ
-- 非公開S3バケットに画像・PDFなどの静的アセットを保存
-- CloudFrontとOrigin Access Controlを利用してS3アセットを配信
+このサイトで現在使っているAWS構成です。
 
 ```text
 ブラウザ
-  ├─ Route 53 → AWS Amplify → Next.js
-  └─ CloudFront → 非公開S3バケット
+  ├─ Route 53 → AWS Amplify → Next.jsアプリケーション
+  └─ CloudFront → Origin Access Control → 非公開S3バケット
 ```
+
+詳細は [docs/aws.md](docs/aws.md) にまとめています。
 
 ## ローカル開発
 
@@ -47,6 +54,7 @@ NEXT_PUBLIC_ASSET_BASE_URL=
 ```
 
 `NEXT_PUBLIC_ASSET_BASE_URL` には、CloudFrontドメインまたはアセット配信用独自ドメインを設定します。
+画像は `<NEXT_PUBLIC_ASSET_BASE_URL>/images/**` に配置します。
 
 GitHub Actionsでは、Repository Variableの `NEXT_PUBLIC_ASSET_BASE_URL` を参照します。
 

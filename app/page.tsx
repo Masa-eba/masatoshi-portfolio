@@ -3,7 +3,6 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { assetPath } from "@/lib/assets";
@@ -38,50 +37,16 @@ function XLogo({ className }: BrandIconProps) {
   );
 }
 
-function InstagramLogo({ className }: BrandIconProps) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      aria-hidden="true"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-    >
-      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-function TuneCoreLogo({ className }: BrandIconProps) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      aria-hidden="true"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <path d="M8 8.5h8" />
-      <path d="M12 8.5v7.5" />
-      <path d="M9.5 16.5h5" />
-    </svg>
-  );
-}
-
 const projects = [
   {
     title: "放置Me",
     category: "AI / 3D Experience",
     highlights: ["Winner", "3D", "AI Agent"],
+    role: "Backend / LLM Integration",
+    stack: ["Next.js", "Supabase", "Gemini API", "TypeScript"],
+    outcome: "Engineer Guild Hackathon 2026 優勝・賞金100万円獲得",
     description:
-      "Engineer Guild Hackathon 2026 presented by 株式会社メルカリ 優勝・賞金100万円獲得\n「放置Me」は、ユーザーのAIクローンが本人に代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出すWebアプリケーションです。SupabaseとGemini APIを用いたバックエンド開発、LLM連携を主に担当しました。",
+      "ユーザーのAIクローンが本人に代わって未知の興味や可能性を探索し、まだ見ぬ自分との出会いを生み出すWebアプリケーションです。SupabaseとGemini APIを用いたバックエンド開発、LLM連携を主に担当しました。",
     url: "https://github.com/engineer-guild-hackathon-2026-05/team-05",
     slideUrl:
       "https://www.canva.com/design/DAHKsWlJrzM/346qIoZLeeaV8ABgQlzPHQ/view?embed",
@@ -90,8 +55,11 @@ const projects = [
     title: "匠 -takumi-",
     category: "Hackathon / Social Learning",
     highlights: ["Award", "Hackathon", "Team Development"],
+    role: "Feature Design / Frontend",
+    stack: ["React", "TypeScript", "Tree UI", "Team Development"],
+    outcome: "Engineer Guild Hackathon 2025 by AtCoder エムスリー賞受賞",
     description:
-      "Engineer Guild Hackathon 2025 by AtCoder エムスリー賞受賞\n「匠 (Takumi)」は、学びの道のりを可視化し、仲間や「ちょっと先の先輩」との繋がりを通じて成長できる、ソーシャルラーニング・プラットフォームです。私は師弟関係をツリー構造で可視化する中核機能の設計・実装を担当しました。",
+      "学びの道のりを可視化し、仲間や「ちょっと先の先輩」との繋がりを通じて成長できる、ソーシャルラーニング・プラットフォームです。師弟関係をツリー構造で可視化する中核機能の設計・実装を担当しました。",
     url: "https://github.com/Engineer-Guild-Hackathon/team-4-app",
     slideUrl:
       "https://www.canva.com/design/DAGzTkaDnx4/-4KTiJNVV-PZ5cghKssGbw/view?embed",
@@ -100,8 +68,11 @@ const projects = [
     title: "Word Galaxy",
     category: "NLP / Visualization",
     highlights: ["Award", "BERT", "2D / 3D"],
+    role: "NLP / Visualization",
+    stack: ["BERT", "React", "2D / 3D", "Search"],
+    outcome: "技育CAMP ハッカソン Vol.6 努力賞受賞",
     description:
-      "技育CAMP ハッカソン Vol.6 努力賞受賞\n「ことばのほしぞら」は、単語間の関連性を星座のように可視化し、関係性をたどりながら理解を深められる学習Webアプリケーションです。BERTで意味的類似性を算出し、2D/3D表示、検索、単語帳、テストまでを含む学習導線を構築しました。",
+      "単語間の関連性を星座のように可視化し、関係性をたどりながら理解を深められる学習Webアプリケーションです。BERTで意味的類似性を算出し、2D/3D表示、検索、単語帳、テストまでを含む学習導線を構築しました。",
     url: "https://github.com/Masa-eba/Word_Galaxy",
     slideUrl:
       "https://docs.google.com/presentation/d/16Fi5WfwiokDrPDSavv5lUgfpazfzo0fI/embed?start=false&loop=false&delayms=3000",
@@ -110,8 +81,11 @@ const projects = [
     title: "ISDLシミュレータ",
     category: "Novel Game / Lab Experience",
     highlights: ["Winner", "React", "FastAPI"],
+    role: "Full-stack Development",
+    stack: ["React", "Vite", "FastAPI", "SQLite"],
+    outcome: "同志社大学 ISDLハッカソン優勝",
     description:
-      "同志社大学 知的システムデザイン研究室 ISDLハッカソン優勝\n「ISDLシミュレータ」は、ISDLでの1年間をノベルゲーム形式で体験できるWebアプリケーションです。役割選択、研究活動、イベント、会話を通して、学生生活の成長と人間関係の変化を表現しました。React + Vite、FastAPI、SQLiteで構成しています。",
+      "ISDLでの1年間をノベルゲーム形式で体験できるWebアプリケーションです。役割選択、研究活動、イベント、会話を通して、学生生活の成長と人間関係の変化を表現しました。React + Vite、FastAPI、SQLiteで構成しています。",
     url: "https://github.com/Masa-eba/isdl-hackathon-2025",
     slideUrl:
       "https://docs.google.com/presentation/d/e/2PACX-1vTAJ_aHn2aRKqLqqX2MyyoCRXrtjMAS-6MJJ1BovpeqSS5VQAo0WxAkSAQEU7GjBA/pubembed?start=false&loop=false&delayms=3000",
@@ -119,7 +93,6 @@ const projects = [
 ];
 
 const profileImageSrc = assetPath("/images/profile/masatoshi-portrait-v2");
-const jacketImageSrc = assetPath("/images/music/darii-cover.png");
 const researchPosterSrc = assetPath("/images/research/poster.png");
 
 const links = [
@@ -132,16 +105,6 @@ const links = [
     label: "X",
     href: "https://x.com/_Masatoshi_eba_",
     icon: XLogo,
-  },
-  {
-    label: "TuneCore",
-    href: "https://www.tunecore.co.jp/artists?id=1107044",
-    icon: TuneCoreLogo,
-  },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/_masatoshi_for_eba_/",
-    icon: InstagramLogo,
   },
 ];
 
@@ -376,7 +339,7 @@ function CertificationsSection() {
       <SectionHeading
         label="Certifications"
         title="取得資格"
-        description="AWSを中心に、クラウド設計・構築の基礎から実践的なアーキテクチャ設計まで学習しています。"
+        description=""
       />
 
       <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -436,9 +399,6 @@ export default function Home() {
             <a href="#research" className="shrink-0 transition hover:text-stone-50">
               Research
             </a>
-            <Link href="/music" className="shrink-0 transition hover:text-stone-50">
-              Music
-            </Link>
           </nav>
         </header>
 
@@ -446,12 +406,11 @@ export default function Home() {
           <div>
             <div className="flex flex-wrap gap-2">
               <Badge className={badgeClassName()}>
-                Software Engineer
+                Software Engineer / M1
               </Badge>
               <Badge className={badgeClassName()}>
-                Researcher
+                Web / AI / Cloud
               </Badge>
-              <Badge className={badgeClassName()}>BeatMaker</Badge>
             </div>
 
             <h1 className="mt-8 max-w-4xl text-5xl leading-[1.04] font-semibold text-stone-50 sm:text-7xl">
@@ -460,19 +419,6 @@ export default function Home() {
 
             <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-300 sm:text-xl">
               同志社大学大学院 理工学研究科 情報工学専攻
-              <br />
-              <a
-                href="https://sites.google.com/view/doshisha-isdl"
-                target="_blank"
-                rel="noreferrer"
-                className="transition hover:text-amber-100"
-              >
-                知的システムデザイン研究室（ISDL）
-              </a>
-              <br />
-              Singer-Songwriter / BeatMaker
-              <br />
-              AWSを活用したクラウド基盤の設計・構築にも取り組んでいます。
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
@@ -490,13 +436,8 @@ export default function Home() {
               >
                 GitHub
               </a>
-              <Link
-                href="/music"
-                className="rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-stone-100 backdrop-blur-md transition hover:border-amber-200/30 hover:bg-white/10"
-              >
-                音楽活動を見る
-              </Link>
             </div>
+
           </div>
 
           <div className="grid gap-4">
@@ -512,10 +453,13 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-7">
                   <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                    Portrait
+                    Profile
                   </p>
                   <p className="mt-3 text-3xl leading-tight font-semibold text-stone-50">
                     Masatoshi Abe
+                  </p>
+                  <p className="mt-2 text-sm text-stone-300">
+                    Graduate Student / Software Engineer
                   </p>
                 </div>
               </div>
@@ -548,7 +492,7 @@ export default function Home() {
         <SectionHeading
           label="Recent Activity"
           title="最近の活動"
-          description="活動を時系列で記録しています。"
+          description=""
         />
 
         <div className="relative mt-10 border-l border-white/10 pl-6 sm:pl-10">
@@ -622,8 +566,8 @@ export default function Home() {
         id="projects"
       >
         <SectionHeading
-          label="Projects"
-          title="開発物"
+          label="Selected Projects"
+          title="開発実績"
           description=""
         />
 
@@ -634,31 +578,57 @@ export default function Home() {
               className="h-full border border-white/10 bg-white/5 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg"
             >
               <CardContent className="p-8">
-                <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                  {project.category}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.highlights.map((highlight) => (
-                    <Badge
-                      key={highlight}
-                      className={badgeClassName(
-                        isAccentBadge(highlight) ? "accent" : "default"
-                      )}
-                    >
-                      {highlight}
-                    </Badge>
-                  ))}
+                <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+                  <div>
+                    <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
+                      {project.category}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.highlights.map((highlight) => (
+                        <Badge
+                          key={highlight}
+                          className={badgeClassName(
+                            isAccentBadge(highlight) ? "accent" : "default"
+                          )}
+                        >
+                          {highlight}
+                        </Badge>
+                      ))}
+                    </div>
+                    <h3 className="mt-4 text-2xl font-semibold text-stone-50">
+                      {project.title}
+                    </h3>
+                    <p className="mt-4 text-sm font-medium tracking-[0.14em] text-amber-100 uppercase">
+                      {project.role}
+                    </p>
+                    <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  <aside className="border-t border-white/10 pt-6 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
+                    <p className="text-xs tracking-[0.24em] text-stone-500 uppercase">
+                      Outcome
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-stone-200">
+                      {project.outcome}
+                    </p>
+                    <p className="mt-6 text-xs tracking-[0.24em] text-stone-500 uppercase">
+                      Stack
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {project.stack.map((tech) => (
+                        <Badge key={tech} className={badgeClassName()}>
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </aside>
                 </div>
-                <h3 className="mt-4 text-2xl font-semibold text-stone-50">
-                  {project.title}
-                </h3>
-                <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
-                  {project.description}
-                </p>
 
                 <div className="mt-7 border-t border-white/10 pt-5">
                   <p className="text-xs tracking-[0.24em] text-stone-500 uppercase">
-                    関連リンク
+                    Links
                   </p>
                   <div className="mt-3 flex flex-wrap gap-3">
                     <a
@@ -668,7 +638,7 @@ export default function Home() {
                       className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200 transition hover:border-amber-200/25 hover:bg-white/10 hover:text-stone-50"
                     >
                       <GitHubLogo className="size-4" />
-                      GitHubを見る
+                      GitHub
                     </a>
                     <a
                       href={project.slideUrl}
@@ -676,7 +646,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200 transition hover:border-amber-200/25 hover:bg-white/10 hover:text-stone-50"
                     >
-                      発表資料を見る
+                      Slides
                     </a>
                   </div>
                 </div>
@@ -703,14 +673,14 @@ export default function Home() {
         <SectionHeading
           label="Research"
           title="研究"
-          description=""
+          description="交通流シミュレーションと最適化を用いて、EV充電インフラ配置を評価しています。"
         />
 
         <div className="mt-10 grid gap-5">
           <Card className="border border-white/10 bg-white/5 text-stone-100 shadow-[0_22px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-lg">
             <CardContent className="p-8">
               <p className="text-xs tracking-[0.24em] text-amber-200/70 uppercase">
-                研究テーマ
+                Research Theme
               </p>
               <h3 className="mt-4 text-3xl font-semibold">
                 EV充電ステーション配置最適化
@@ -720,6 +690,15 @@ export default function Home() {
                 交通流、充電需要、待ち時間、未充電量、設置コストを同時に評価し、利用者の負担と設置側のコストを抑える配置を検討しています。
                 第29回進化計算学会研究会で発表し、実観測データ、OpenStreetMap道路網、ODデータを組み合わせ、目的関数に基づいて候補配置を評価しました。
               </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["UXsim", "OpenStreetMap", "OD Data", "Optimization"].map(
+                  (tech) => (
+                    <Badge key={tech} className={badgeClassName()}>
+                      {tech}
+                    </Badge>
+                  )
+                )}
+              </div>
               <a
                 href="https://sites.google.com/view/doshisha-isdl"
                 target="_blank"
@@ -737,7 +716,7 @@ export default function Home() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
-                    学会発表
+                    Conference Poster
                   </p>
                   <h3 className="mt-4 text-2xl font-semibold text-stone-50">
                     学会発表ポスター
@@ -764,42 +743,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-6 py-20">
-        <div className="relative overflow-hidden border-y border-white/10 py-12 sm:py-16">
-          <div className="grid items-center gap-8 lg:grid-cols-[1fr_280px]">
-            <div>
-
-              <SectionHeading
-                label="Music"
-                title="音楽活動"
-                description=""
-              />
-              <p className="mt-5 max-w-2xl leading-8 text-stone-300">
-                Singer-Songwriter / BeatMakerとしての作品、配信先、映像を専用ページにまとめています。
-              </p>
-              <Link
-                href="/music"
-                className="mt-8 inline-flex rounded-2xl bg-stone-50 px-6 py-3 text-sm font-medium text-stone-950 transition hover:bg-amber-100"
-              >
-                音楽ページを見る
-              </Link>
-            </div>
-            <Link
-              href="/music"
-              className="relative aspect-square overflow-hidden rounded-full border border-white/15 bg-black shadow-[0_30px_100px_-50px_rgba(251,191,36,0.6)] transition hover:rotate-2 hover:scale-[1.02]"
-            >
-              <Image
-                src={jacketImageSrc}
-                alt="だりぃ cover art"
-                fill
-                unoptimized
-                className="object-cover"
-                sizes="280px"
-              />
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
