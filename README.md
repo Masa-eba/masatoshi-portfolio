@@ -6,36 +6,28 @@
 
 https://www.abemasatoshi.com/
 
-## サイト構成
-
-- Next.js App Routerで構築
-- AWS Amplifyでサイト本体をビルド・デプロイ
-- 画像・PDFなどの静的アセットはAmazon S3に保管
-- S3の静的アセットはAmazon CloudFront経由で配信
-- 独自ドメイン `abemasatoshi.com` はAmazon Route 53で管理
-
 ## 使用技術
 
 - Next.js
 - React
 - TypeScript
 - Tailwind CSS
-- AWS Amplify
-- Amazon S3
-- Amazon CloudFront
-- Amazon Route 53
 
 ## AWS構成
 
-このサイトで現在使っているAWS構成です。
+| サービス | 用途 |
+| --- | --- |
+| AWS Amplify | Next.jsアプリケーションのビルド・デプロイ |
+| Amazon S3 | 画像・PDFなどの静的アセットを非公開バケットで保管 |
+| Amazon CloudFront | S3上の静的アセットをHTTPSで配信 |
+| CloudFront Origin Access Control | CloudFrontからS3へのアクセスだけを許可 |
+| Amazon Route 53 | `abemasatoshi.com` の独自ドメイン管理 |
 
 ```text
 ブラウザ
   ├─ Route 53 → AWS Amplify → Next.jsアプリケーション
   └─ CloudFront → Origin Access Control → 非公開S3バケット
 ```
-
-詳細は [docs/aws.md](docs/aws.md) にまとめています。
 
 ## ローカル開発
 
