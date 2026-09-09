@@ -15,7 +15,7 @@ function GitHubLogo({ className }: BrandIconProps) {
   );
 }
 
-function XLogo({ className }: BrandIconProps) {
+function LinkedInLogo({ className }: BrandIconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -23,12 +23,12 @@ function XLogo({ className }: BrandIconProps) {
       aria-hidden="true"
       fill="currentColor"
     >
-      <path d="M18.9 2H22l-6.76 7.72L23.2 22h-6.24l-4.9-7.5L5.5 22H2.4l7.23-8.26L1.8 2H8.2l4.43 6.96L18.9 2Zm-1.1 18h1.73L7.25 3.9H5.4L17.8 20Z" />
+      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5.01 2.5 2.5 0 0 0 0-5.01ZM3 9.75h3.96V21H3V9.75Zm6.2 0h3.8v1.54h.05c.53-.95 1.82-1.95 3.74-1.95 4 0 4.74 2.63 4.74 6.05V21h-3.96v-4.97c0-1.19-.02-2.72-1.66-2.72-1.66 0-1.91 1.3-1.91 2.63V21H9.2V9.75Z" />
     </svg>
   );
 }
 
 export const brandLogos = {
   github: GitHubLogo,
-  x: XLogo,
+  linkedin: LinkedInLogo,
 };

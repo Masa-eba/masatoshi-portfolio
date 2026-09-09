@@ -65,9 +65,9 @@ export const links = [
     icon: "github",
   },
   {
-    label: "X",
-    href: "https://x.com/_Masatoshi_eba_",
-    icon: "x",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/masatoshi-abe-0ab5912b5/",
+    icon: "linkedin",
   },
 ] as const;
 
