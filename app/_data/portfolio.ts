@@ -75,7 +75,7 @@ export const certifications = [
   {
     title: "応用情報技術者試験",
     note: "情報処理技術者試験",
-    earned: "2025.10 合格",
+    earned: "2025.12 合格",
     icon: "badge",
   },
   {
@@ -191,7 +191,7 @@ export const recentActivities: RecentActivity[] = [
     imageAlt: "卒業論文発表の写真",
   },
   {
-    date: "2025.10",
+    date: "2025.12",
     category: "Certification",
     title: "応用情報技術者試験 合格",
     description: "情報処理技術者試験 応用情報技術者試験に合格しました。",
