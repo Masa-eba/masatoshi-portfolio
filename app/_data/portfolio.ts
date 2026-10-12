@@ -114,6 +114,8 @@ export const recentActivities: RecentActivity[] = [
     date: "2026.09.02 - 2026.09.18",
     category: "Internship",
     title: "LINEヤフー株式会社",
+    description:
+      "エンジニア向けインターンシップに参加しました。大規模サービスの開発プロセスやチーム開発の進め方に触れ、設計、実装、レビューを通じてユーザー影響を意識した開発を経験しました。",
   },
   {
     date: "2026.08.31",
@@ -132,11 +134,15 @@ export const recentActivities: RecentActivity[] = [
     date: "2026.08.22",
     category: "Internship",
     title: "朝日新聞社",
+    description:
+      "メディア企業のエンジニアリング領域を体験するインターンシップに参加しました。報道サービスを支える開発、データ活用、プロダクト改善の考え方を学びました。",
   },
   {
     date: "2026.08.10 - 2026.08.14",
     category: "Internship",
     title: "日本経済新聞社",
+    description:
+      "技術職向けインターンシップに参加しました。ニュースサービスの開発現場で、情報配信を支えるシステム設計、プロダクト開発、チームでの課題解決に取り組みました。",
   },
   {
     date: "2026.05.24 - 2026.05.26",
@@ -195,13 +201,6 @@ export const recentActivities: RecentActivity[] = [
     category: "Certification",
     title: "応用情報技術者試験 合格",
     description: "情報処理技術者試験 応用情報技術者試験に合格しました。",
-  },
-  {
-    date: "2025.10 - 2026.05",
-    category: "Career",
-    title: "Software Engineer Intern",
-    description:
-      "タレントプールサービスの開発に従事しました。Next.js、TypeScript、Ruby on Railsを用いたフロントエンド・バックエンド開発を担当し、企業向け管理画面やユーザー向け機能の実装、UI改善に取り組みました。",
   },
   {
     date: "2025.09.03 - 2025.09.20",
