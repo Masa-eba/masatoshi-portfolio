@@ -31,11 +31,15 @@ https://www.abemasatoshi.com/
 
 ## ローカル開発
 
+Node.js `24.22.1` を使用します（`.nvmrc` に記載）。nvmを利用する場合は、リポジトリ直下で `nvm install` と `nvm use` を実行してください。
+
 ```bash
-npm install
+npm ci
 cp .env.example .env.local
 npm run dev
 ```
+
+AWS Amplifyのビルドも `amplify.yml` から同じNode.jsバージョンを使用します。
 
 ブラウザで `http://localhost:3000` を開きます。
 
