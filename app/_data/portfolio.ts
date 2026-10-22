@@ -4,8 +4,6 @@ export const projects = [
   {
     title: "放置Me",
     category: "生成AI・3Dアプリケーション",
-    highlights: ["最優秀賞", "3D", "AIエージェント"],
-    role: "バックエンド・LLM連携",
     outcome: "Engineer Guild Hackathon 2026 最優秀賞（賞金100万円）",
     description:
       "AIクローンがユーザーに代わって未知の興味を探索するWebアプリ。バックエンド開発とLLM連携を担当。",
@@ -16,8 +14,6 @@ export const projects = [
   {
     title: "匠 -takumi-",
     category: "ソーシャルラーニング",
-    highlights: ["企業賞", "ハッカソン"],
-    role: "機能設計・フロントエンド",
     outcome: "Engineer Guild Hackathon 2025 by AtCoder エムスリー賞",
     description:
       "学習の進捗や仲間とのつながりを可視化する学習プラットフォーム。師弟関係を表すツリー機能の設計・実装を担当。",
@@ -28,8 +24,6 @@ export const projects = [
   {
     title: "Word Galaxy",
     category: "自然言語処理・可視化",
-    highlights: ["努力賞", "2D・3D"],
-    role: "自然言語処理・可視化",
     outcome: "技育CAMP ハッカソン Vol.6 努力賞",
     description:
       "単語間の意味的な関連を星座のように表示する学習アプリ。単語検索から単語帳・テストまでの学習機能を実装。",
@@ -40,8 +34,6 @@ export const projects = [
   {
     title: "ISDLシミュレータ",
     category: "研究室紹介アプリ",
-    highlights: ["最優秀賞", "Webアプリ"],
-    role: "フルスタック開発",
     outcome: "同志社大学 ISDLハッカソン 最優秀賞",
     description:
       "研究室での1年間をノベルゲーム形式で体験できるアプリ。選択や会話を通して、学生生活と人間関係の変化を表現。",
@@ -147,6 +139,11 @@ export const recentActivities: RecentActivity[] = [
     imageAlt: "Engineer Guild Hackathon 2026 記念写真",
   },
   {
+    date: "2025.11〜2026.05",
+    category: "インターン",
+    title: "SaaSフルスタック開発",
+  },
+  {
     date: "2026.04.01",
     category: "学歴",
     title: "同志社大学大学院 入学",
@@ -214,13 +211,6 @@ export const recentActivities: RecentActivity[] = [
     image: assetPath("/images/activities/Word_Galaxy.png"),
     imageAlt: "技育CAMP ハッカソン Vol.6 努力賞の賞状",
     imageOrientation: "portrait",
-  },
-  {
-    date: "2025.05.18〜2025.06.22",
-    category: "受賞",
-    title: "プログラミング初学者の会 WEBアプリハッカソン 最優秀賞",
-    description: "利用者に合わせてトレーニングを提案する筋トレアプリを開発。",
-    url: "https://pg-beginner-mtg.connpass.com/event/352268/",
   },
   {
     date: "2025.05.18〜2025.06.22",

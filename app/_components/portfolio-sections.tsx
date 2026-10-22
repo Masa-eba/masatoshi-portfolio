@@ -45,19 +45,8 @@ function CardContent({ className = "", ...props }: ComponentProps<"div">) {
   return <div className={`px-4 ${className}`} {...props} />;
 }
 
-function badgeClassName(tone: "default" | "accent" = "default") {
-  const base =
-    "border px-3 py-1 text-[0.7rem] font-medium uppercase";
-
-  if (tone === "accent") {
-    return `${base} border-cyan-300/30 bg-cyan-300/10 text-cyan-100`;
-  }
-
-  return `${base} border-white/10 bg-white/[0.04] text-stone-300`;
-}
-
-function isAccentBadge(label: string) {
-  return ["最優秀賞", "企業賞", "努力賞", "Certified"].includes(label);
+function badgeClassName() {
+  return "border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-[0.7rem] font-medium text-cyan-100 uppercase";
 }
 
 export function HeroSection() {
@@ -100,22 +89,14 @@ export function HeroSection() {
             同志社大学大学院 理工学研究科 情報工学専攻
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href="#projects"
-              className="rounded-md bg-cyan-200 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
-            >
-              プロジェクトを見る
-            </a>
-            <a
-              href="https://github.com/Masa-eba"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-md border border-white/10 bg-white/[0.04] px-6 py-3 text-sm font-medium text-stone-100 transition hover:border-cyan-300/35 hover:bg-white/[0.08]"
-            >
-              GitHub
-            </a>
-          </div>
+          <a
+            href="https://github.com/Masa-eba"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-10 inline-flex rounded-md border border-white/10 bg-white/[0.04] px-6 py-3 text-sm font-medium text-stone-100 transition hover:border-cyan-300/35 hover:bg-white/[0.08]"
+          >
+            GitHub
+          </a>
         </div>
 
         <div className="grid gap-4">
@@ -189,7 +170,6 @@ export function CertificationsSection() {
                   <div className="flex size-12 items-center justify-center rounded-md border border-cyan-300/20 bg-cyan-300/[0.06] text-cyan-200">
                     <Icon className="size-8" />
                   </div>
-                  <Badge className={badgeClassName("accent")}>取得済み</Badge>
                 </div>
                 <h3 className="mt-6 text-2xl leading-tight font-semibold text-stone-50">
                   {certification.title}
@@ -299,24 +279,9 @@ export function ProjectsSection() {
                   <p className="text-xs tracking-[0.24em] text-stone-400 uppercase">
                     {project.category}
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.highlights.map((highlight) => (
-                      <Badge
-                        key={highlight}
-                        className={badgeClassName(
-                          isAccentBadge(highlight) ? "accent" : "default"
-                        )}
-                      >
-                        {highlight}
-                      </Badge>
-                    ))}
-                  </div>
                   <h3 className="mt-4 text-2xl font-semibold text-stone-50">
                     {project.title}
                   </h3>
-                  <p className="mt-4 text-sm font-medium text-cyan-200 uppercase">
-                    {project.role}
-                  </p>
                   <p className="mt-5 whitespace-pre-line leading-8 text-stone-300">
                     {project.description}
                   </p>
@@ -410,7 +375,7 @@ export function ResearchSection() {
                   EV充電ステーション配置最適化
                 </p>
               </div>
-              <Badge className={badgeClassName("accent")}>ポスター</Badge>
+              <Badge className={badgeClassName()}>ポスター</Badge>
             </div>
 
             <div className="relative mx-auto mt-6 aspect-[3/4] w-full max-w-3xl overflow-hidden rounded-md border border-white/10 bg-black">
